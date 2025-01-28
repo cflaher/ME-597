@@ -3,10 +3,12 @@
 <package format="3">
   <name>task_1</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="me597@todo.todo">me597</maintainer>
-  <license>Apache-2.0</license>
+<description>Examples of minimal publisher/subscriber using rclpy</description>
+<maintainer email="cflaherty@gmail.com">Cian Flaherty</maintainer>
+<license>Apache License 2.0</license>
 
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
