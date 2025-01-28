@@ -13,13 +13,18 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='me597',
-    maintainer_email='me597@todo.todo',
-    description='TODO: Package description',
-    license='Apache-2.0',
+    maintainer='CianFlaherty',
+    maintainer_email='cflaherty310@gmail.com',
+    description='Examples of minimal publisher/subscriber using rclpy',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            entry_points={
+            'console_scripts': [
+                'talker = py_pubsub.publisher_member_function:main',
+                ],
+            },
         ],
     },
 )
