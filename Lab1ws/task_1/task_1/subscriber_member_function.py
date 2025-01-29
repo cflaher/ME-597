@@ -15,7 +15,7 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import String
+from std_msgs.msg import Float32
 
 
 class MinimalSubscriber(Node):
@@ -23,14 +23,15 @@ class MinimalSubscriber(Node):
     def __init__(self):
         super().__init__('minimal_subscriber')
         self.subscription = self.create_subscription(
-            String,
+            Float32,
             'topic',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg.data)
+        doubled_data = msg.data * 2
+        self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: ' % msg.data)
 
 
 def main(args=None):
