@@ -30,11 +30,16 @@ class MinimalPublisher(Node):
         self.i = 0
 
     def timer_callback(self):
-        msg = Float32()
-        msg.data = float(self.i)
+        
+        msg = JointData()
+        msg.center = Point32(x=float(self.i), y=0.0, z=0.0)  # Assigning a Point32 object
+        msg.vel = float(self.i)  # Assigning a float value
+
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%.2f"' % msg.data)
+        self.get_logger().info(f'Publishing: center=({msg.center.x}, {msg.center.y}, {msg.center.z}), vel={msg.vel}')
         self.i += 1
+
+        
 
 
 def main(args=None):
