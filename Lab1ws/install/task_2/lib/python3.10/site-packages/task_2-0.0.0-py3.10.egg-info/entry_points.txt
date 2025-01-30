@@ -1,3 +1,4 @@
 [console_scripts]
-
+listener = task_2.subscriber_member_function:main
+talker = task_2.publisher_member_function:main
 

@@ -11,6 +11,8 @@ setup.py
 ../build/task_2/task_2.egg-info/zip-safe
 resource/task_2
 task_2/__init__.py
+task_2/publisher_member_function.py
+task_2/subscriber_member_function.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
