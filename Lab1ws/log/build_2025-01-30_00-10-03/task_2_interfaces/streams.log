@@ -1,3 +1,0 @@
-[0.008s] Invoking command in '/home/me597/ME-597/Lab1ws/build/task_2_interfaces': /usr/bin/cmake /home/me597/ME-597/Lab1ws -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/Lab1ws/install/task_2_interfaces
-[0.022s] [0mCMake Error: The source "/home/me597/ME-597/Lab1ws/CMakeLists.txt" does not match the source "/home/me597/ME-597/Lab1ws/task_2_interfaces/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.[0m
-[0.023s] Invoked command in '/home/me597/ME-597/Lab1ws/build/task_2_interfaces' returned '1': /usr/bin/cmake /home/me597/ME-597/Lab1ws -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/Lab1ws/install/task_2_interfaces

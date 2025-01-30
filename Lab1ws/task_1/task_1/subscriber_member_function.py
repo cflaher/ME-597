@@ -21,7 +21,7 @@ from std_msgs.msg import Float32
 class MinimalSubscriber(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
+        super().__init__('listener')
         self.subscription = self.create_subscription(
             Float32,
             'my_first_topic',

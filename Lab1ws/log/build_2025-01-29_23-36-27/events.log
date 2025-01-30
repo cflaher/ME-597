@@ -1,4 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000222] (-) JobUnselected: {'identifier': 'task_1'}
-[0.000286] (-) JobUnselected: {'identifier': 'task_2'}
-[0.000337] (-) EventReactorShutdown: {}

@@ -1,10 +1,10 @@
 Metadata-Version: 2.1
 Name: task-2
 Version: 0.0.0
-Summary: Task 2 package
+Summary: Custom service server and service client node
 Home-page: UNKNOWN
-Maintainer: your_name
-Maintainer-email: your_email@example.com
+Maintainer: Cian_Flaherty
+Maintainer-email: cflaherty310@gmail.com
 License: Apache License 2.0
 Platform: UNKNOWN
 License-File: LICENSE

@@ -3,9 +3,9 @@
 <package format="3">
   <name>task_2_interfaces</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="cflaherty310@gmail.com">me597</maintainer>
-  <license>TODO: License declaration</license>
+  <description>ROS 2 ament_python package with custom service server and service client node exchanging via a custom message and service interface</description>
+  <maintainer email="cflaherty@gmail.com">Cian Flaherty</maintainer>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
