@@ -3,9 +3,10 @@
 <package format="3">
   <name>task_2</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="me597@todo.todo">me597</maintainer>
-  <license>Apache-2.0</license>
+  <description>ROS 2 ament_python package with custom service server and service client node exchanging via a custom message and service interface</description>
+  <maintainer email="cflaherty@gmail.com">Cian Flaherty</maintainer>
+  <license>Apache License 2.0</license>
+
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

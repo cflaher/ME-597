@@ -17,9 +17,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='your_name',
-    maintainer_email='your_email@example.com',
-    description='Task 2 package',
+    maintainer='Cian_Flaherty',
+    maintainer_email='cflaherty310@gmail.com',
+    description='Custom service server and service client node',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
