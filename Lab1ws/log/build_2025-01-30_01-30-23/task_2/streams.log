@@ -1,0 +1,26 @@
+[0.479s] Invoking command in '/home/me597/ME-597/Lab1ws/task_2': AMENT_PREFIX_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces LD_LIBRARY_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_2 build --build-base /home/me597/ME-597/Lab1ws/build/task_2/build install --record /home/me597/ME-597/Lab1ws/build/task_2/install.log --single-version-externally-managed install_data
+[0.640s] running egg_info
+[0.641s] writing ../build/task_2/task_2.egg-info/PKG-INFO
+[0.642s] writing dependency_links to ../build/task_2/task_2.egg-info/dependency_links.txt
+[0.642s] writing entry points to ../build/task_2/task_2.egg-info/entry_points.txt
+[0.643s] writing requirements to ../build/task_2/task_2.egg-info/requires.txt
+[0.643s] writing top-level names to ../build/task_2/task_2.egg-info/top_level.txt
+[0.647s] reading manifest file '../build/task_2/task_2.egg-info/SOURCES.txt'
+[0.647s] adding license file 'LICENSE'
+[0.648s] writing manifest file '../build/task_2/task_2.egg-info/SOURCES.txt'
+[0.648s] running build
+[0.648s] running build_py
+[0.648s] copying task_2/subscriber_member_function.py -> /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2
+[0.649s] running install
+[0.649s] running install_lib
+[0.649s] copying /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2/subscriber_member_function.py -> /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2
+[0.649s] byte-compiling /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc
+[0.650s] running install_data
+[0.650s] running install_egg_info
+[0.652s] removing '/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info' (and everything under it)
+[0.653s] Copying ../build/task_2/task_2.egg-info to /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info
+[0.653s] running install_scripts
+[0.668s] Installing listener script to /home/me597/ME-597/Lab1ws/install/task_2/lib/task_2
+[0.669s] Installing talker script to /home/me597/ME-597/Lab1ws/install/task_2/lib/task_2
+[0.669s] writing list of installed files to '/home/me597/ME-597/Lab1ws/build/task_2/install.log'
+[0.685s] Invoked command in '/home/me597/ME-597/Lab1ws/task_2' returned '0': AMENT_PREFIX_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces LD_LIBRARY_PATH=/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_2 build --build-base /home/me597/ME-597/Lab1ws/build/task_2/build install --record /home/me597/ME-597/Lab1ws/build/task_2/install.log --single-version-externally-managed install_data
