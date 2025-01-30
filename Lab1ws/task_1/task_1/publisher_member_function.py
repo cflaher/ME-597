@@ -21,7 +21,7 @@ from std_msgs.msg import Float32
 class MinimalPublisher(Node):
 
     def __init__(self):
-        super().__init__('minimal_publisher')
+        super().__init__('talker')
         self.publisher_ = self.create_publisher(Float32, 'my_first_topic', 10)
         timer_period = 1.0  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
