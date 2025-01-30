@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from task_2_interfaces.srv import JointState
@@ -8,7 +7,6 @@ class JointStateClient(Node):
         super().__init__('client')
         self.client = self.create_client(JointState, 'joint_service')
         
-        # Wait for service to be available
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Service not available, waiting...')
 
@@ -25,11 +23,10 @@ def main():
     rclpy.init()
     client = JointStateClient()
     
-    # Test cases
     test_values = [
-        (1.0, 2.0, 3.0),    # Positive sum
-        (-1.0, -2.0, -3.0), # Negative sum
-        (1.0, -1.0, 0.0),   # Zero sum
+        (1.0, 2.0, 3.0),    
+        (-1.0, -2.0, -3.0), 
+        (1.0, -1.0, 0.0),   
     ]
     
     try:
