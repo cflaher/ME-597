@@ -16,7 +16,8 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Float32
-import JointData
+from task_2_interfaces.msg import JointData
+from geometry_msgs.msg import Point32
 
 class MinimalSubscriber(Node):
 
