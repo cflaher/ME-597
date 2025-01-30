@@ -9,6 +9,7 @@ setup.py
 ../build/task_2/task_2.egg-info/requires.txt
 ../build/task_2/task_2.egg-info/top_level.txt
 ../build/task_2/task_2.egg-info/zip-safe
+launch/service_launch.py
 resource/task_2
 task_2/__init__.py
 task_2/client.py
