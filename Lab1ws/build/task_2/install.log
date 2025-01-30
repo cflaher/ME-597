@@ -17,5 +17,6 @@
 /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info/entry_points.txt
 /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info/PKG-INFO
 /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info/zip-safe
-/home/me597/ME-597/Lab1ws/install/task_2/lib/task_2/listener
+/home/me597/ME-597/Lab1ws/install/task_2/lib/task_2/client
+/home/me597/ME-597/Lab1ws/install/task_2/lib/task_2/listener = task_2.subscriber_member_function:mainservice
 /home/me597/ME-597/Lab1ws/install/task_2/lib/task_2/talker
