@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
                 'talker = task_1.publisher_member_function:main',
+                'listener = task_1.subscriber_member_function:main'
         ],
     }
 )
