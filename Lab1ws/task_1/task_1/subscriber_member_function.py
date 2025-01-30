@@ -21,7 +21,7 @@ from std_msgs.msg import Float32
 class MinimalSubscriber(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
+        super().__init__('listener')
         self.subscription = self.create_subscription(
             Float32,
             'my_first_topic',
@@ -31,7 +31,7 @@ class MinimalSubscriber(Node):
 
     def listener_callback(self, msg):
         doubled_data = msg.data * 2
-        self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: %.2f' % (msg.data, doubled_data))
+        self.get_logger().info('Quantity of data: "%.2f". Double quantity: %.2f' % (msg.data, doubled_data))
 
 
 def main(args=None):
