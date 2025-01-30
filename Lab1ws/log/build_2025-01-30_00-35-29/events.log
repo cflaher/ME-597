@@ -1,0 +1,336 @@
+[0.000000] (-) TimerEvent: {}
+[0.000500] (-) JobUnselected: {'identifier': 'task_1'}
+[0.000549] (-) JobUnselected: {'identifier': 'task_2'}
+[0.000563] (task_2_interfaces) JobQueued: {'identifier': 'task_2_interfaces', 'dependencies': OrderedDict()}
+[0.000605] (task_2_interfaces) JobStarted: {'identifier': 'task_2_interfaces'}
+[0.008069] (task_2_interfaces) JobProgress: {'identifier': 'task_2_interfaces', 'progress': 'cmake'}
+[0.008537] (task_2_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/me597/ME-597/Lab1ws/task_2_interfaces', '-DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/Lab1ws/install/task_2_interfaces'], 'cwd': '/home/me597/ME-597/Lab1ws/build/task_2_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'me597'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/me597'), ('OLDPWD', '/home/me597/ME-597/Lab1ws/task_2_interfaces'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1621'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'me597'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'me597'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/me597:@/tmp/.ICE-unix/1601,unix/me597:/tmp/.ICE-unix/1601'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b653529e_9cca_433d_a21a_4995305ce78f'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PWVU02'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/me597/ME-597/Lab1ws/build/task_2_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble')]), 'shell': False}
+[0.022491] (task_2_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099954] (-) TimerEvent: {}
+[0.117834] (task_2_interfaces) StdoutLine: {'line': b'-- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[0.134972] (task_2_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.137043] (task_2_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.142762] (task_2_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.150682] (task_2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.161436] (task_2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.176303] (task_2_interfaces) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.184495] (task_2_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.200261] (-) TimerEvent: {}
+[0.301512] (-) TimerEvent: {}
+[0.403964] (-) TimerEvent: {}
+[0.420418] (task_2_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.504406] (-) TimerEvent: {}
+[0.606572] (-) TimerEvent: {}
+[0.708604] (-) TimerEvent: {}
+[0.781265] (task_2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.809766] (-) TimerEvent: {}
+[0.908144] (task_2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.910156] (-) TimerEvent: {}
+[0.928548] (task_2_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.932191] (task_2_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.963967] (task_2_interfaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[0.964939] (task_2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.965153] (task_2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.965198] (task_2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.985053] (task_2_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.011216] (-) TimerEvent: {}
+[1.066510] (task_2_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.109320] (task_2_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[1.111414] (-) TimerEvent: {}
+[1.121978] (task_2_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/me597/ME-597/Lab1ws/build/task_2_interfaces\n'}
+[1.127262] (task_2_interfaces) CommandEnded: {'returncode': 0}
+[1.127953] (task_2_interfaces) JobProgress: {'identifier': 'task_2_interfaces', 'progress': 'build'}
+[1.129239] (task_2_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/me597/ME-597/Lab1ws/build/task_2_interfaces', '--', '-j2', '-l2'], 'cwd': '/home/me597/ME-597/Lab1ws/build/task_2_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'me597'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/me597'), ('OLDPWD', '/home/me597/ME-597/Lab1ws/task_2_interfaces'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1621'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'me597'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'me597'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/me597:@/tmp/.ICE-unix/1601,unix/me597:/tmp/.ICE-unix/1601'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b653529e_9cca_433d_a21a_4995305ce78f'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PWVU02'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/me597/ME-597/Lab1ws/build/task_2_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble')]), 'shell': False}
+[1.172887] (task_2_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.173659] (task_2_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.212353] (-) TimerEvent: {}
+[1.313442] (-) TimerEvent: {}
+[1.414446] (-) TimerEvent: {}
+[1.516713] (-) TimerEvent: {}
+[1.618115] (-) TimerEvent: {}
+[1.646355] (task_2_interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/task_2_interfaces/msg/detail/joint_data__functions.c.o\x1b[0m\n'}
+[1.680507] (task_2_interfaces) StdoutLine: {'line': b'[  7%] Built target task_2_interfaces__cpp\n'}
+[1.685079] (task_2_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/task_2_interfaces/srv/detail/joint_state__functions.c.o\x1b[0m\n'}
+[1.718764] (-) TimerEvent: {}
+[1.789718] (task_2_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking C shared library libtask_2_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[1.803608] (task_2_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_task_2_interfaces\n'}
+[1.813731] (task_2_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.822542] (-) TimerEvent: {}
+[1.824760] (task_2_interfaces) StdoutLine: {'line': b'[ 15%] Built target task_2_interfaces__rosidl_generator_c\n'}
+[1.833150] (task_2_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.923428] (-) TimerEvent: {}
+[2.024114] (-) TimerEvent: {}
+[2.074412] (task_2_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/task_2_interfaces/msg/detail/joint_data__type_support.cpp.o\x1b[0m\n'}
+[2.077336] (task_2_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/task_2_interfaces/msg/detail/dds_fastrtps/joint_data__type_support.cpp.o\x1b[0m\n'}
+[2.124510] (-) TimerEvent: {}
+[2.226531] (-) TimerEvent: {}
+[2.327022] (-) TimerEvent: {}
+[2.427651] (-) TimerEvent: {}
+[2.528242] (-) TimerEvent: {}
+[2.629686] (-) TimerEvent: {}
+[2.704847] (task_2_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/task_2_interfaces/srv/detail/dds_fastrtps/joint_state__type_support.cpp.o\x1b[0m\n'}
+[2.731426] (-) TimerEvent: {}
+[2.781373] (task_2_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/task_2_interfaces/srv/detail/joint_state__type_support.cpp.o\x1b[0m\n'}
+[2.831555] (-) TimerEvent: {}
+[2.935818] (-) TimerEvent: {}
+[3.038067] (-) TimerEvent: {}
+[3.039543] (task_2_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32m\x1b[1mLinking CXX shared library libtask_2_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.092321] (task_2_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking CXX shared library libtask_2_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[3.111659] (task_2_interfaces) StdoutLine: {'line': b'[ 33%] Built target task_2_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[3.119635] (task_2_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.138671] (-) TimerEvent: {}
+[3.156180] (task_2_interfaces) StdoutLine: {'line': b'[ 35%] Built target task_2_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[3.241182] (-) TimerEvent: {}
+[3.342146] (-) TimerEvent: {}
+[3.351525] (task_2_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/task_2_interfaces/msg/joint_data__type_support.cpp.o\x1b[0m\n'}
+[3.368217] (task_2_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[3.373295] (task_2_interfaces) StdoutLine: {'line': b'creating task_2_interfaces.egg-info\n'}
+[3.373654] (task_2_interfaces) StdoutLine: {'line': b'writing task_2_interfaces.egg-info/PKG-INFO\n'}
+[3.373956] (task_2_interfaces) StdoutLine: {'line': b'writing dependency_links to task_2_interfaces.egg-info/dependency_links.txt\n'}
+[3.374263] (task_2_interfaces) StdoutLine: {'line': b'writing top-level names to task_2_interfaces.egg-info/top_level.txt\n'}
+[3.376053] (task_2_interfaces) StdoutLine: {'line': b"writing manifest file 'task_2_interfaces.egg-info/SOURCES.txt'\n"}
+[3.377145] (task_2_interfaces) StdoutLine: {'line': b"reading manifest file 'task_2_interfaces.egg-info/SOURCES.txt'\n"}
+[3.378248] (task_2_interfaces) StdoutLine: {'line': b"writing manifest file 'task_2_interfaces.egg-info/SOURCES.txt'\n"}
+[3.398974] (task_2_interfaces) StdoutLine: {'line': b'[ 38%] Built target ament_cmake_python_build_task_2_interfaces_egg\n'}
+[3.409659] (task_2_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.444051] (-) TimerEvent: {}
+[3.545248] (-) TimerEvent: {}
+[3.564832] (task_2_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/task_2_interfaces/srv/joint_state__type_support.cpp.o\x1b[0m\n'}
+[3.647203] (-) TimerEvent: {}
+[3.739114] (task_2_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/task_2_interfaces/msg/detail/joint_data__type_support_c.cpp.o\x1b[0m\n'}
+[3.747416] (-) TimerEvent: {}
+[3.848198] (-) TimerEvent: {}
+[3.912360] (task_2_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libtask_2_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[3.949816] (-) TimerEvent: {}
+[4.027883] (task_2_interfaces) StdoutLine: {'line': b'[ 48%] Built target task_2_interfaces__rosidl_typesupport_cpp\n'}
+[4.045260] (task_2_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/task_2_interfaces/srv/detail/joint_state__type_support_c.cpp.o\x1b[0m\n'}
+[4.050855] (-) TimerEvent: {}
+[4.154895] (-) TimerEvent: {}
+[4.257548] (-) TimerEvent: {}
+[4.315707] (task_2_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.358248] (-) TimerEvent: {}
+[4.459897] (-) TimerEvent: {}
+[4.561453] (-) TimerEvent: {}
+[4.664850] (-) TimerEvent: {}
+[4.765119] (-) TimerEvent: {}
+[4.775213] (task_2_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libtask_2_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[4.833511] (task_2_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/task_2_interfaces/msg/detail/joint_data__type_support.c.o\x1b[0m\n'}
+[4.838823] (task_2_interfaces) StdoutLine: {'line': b'[ 58%] Built target task_2_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[4.849199] (task_2_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.866499] (-) TimerEvent: {}
+[4.874888] (task_2_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/task_2_interfaces/srv/detail/joint_state__type_support.c.o\x1b[0m\n'}
+[4.913781] (task_2_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking C shared library libtask_2_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.947279] (task_2_interfaces) StdoutLine: {'line': b'[ 66%] Built target task_2_interfaces__rosidl_typesupport_introspection_c\n'}
+[4.966877] (-) TimerEvent: {}
+[5.048192] (task_2_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/task_2_interfaces/msg/joint_data__type_support.cpp.o\x1b[0m\n'}
+[5.049060] (task_2_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/task_2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/task_2_interfaces/srv/joint_state__type_support.cpp.o\x1b[0m\n'}
+[5.067966] (-) TimerEvent: {}
+[5.078998] (task_2_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libtask_2_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.116836] (task_2_interfaces) StdoutLine: {'line': b'[ 74%] Built target task_2_interfaces__rosidl_typesupport_c\n'}
+[5.139591] (task_2_interfaces) StdoutLine: {'line': b'[ 74%] Built target task_2_interfaces\n'}
+[5.161562] (task_2_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[5.168256] (-) TimerEvent: {}
+[5.269927] (-) TimerEvent: {}
+[5.372869] (-) TimerEvent: {}
+[5.475210] (-) TimerEvent: {}
+[5.578407] (-) TimerEvent: {}
+[5.602901] (task_2_interfaces) StdoutLine: {'line': b'[ 76%] Built target task_2_interfaces__py\n'}
+[5.630886] (task_2_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/task_2_interfaces/msg/_joint_data_s.c.o\x1b[0m\n'}
+[5.631101] (task_2_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/task_2_interfaces/srv/_joint_state_s.c.o\x1b[0m\n'}
+[5.678847] (-) TimerEvent: {}
+[5.779787] (-) TimerEvent: {}
+[5.828588] (task_2_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/task_2_interfaces/libtask_2_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[5.880313] (-) TimerEvent: {}
+[5.886662] (task_2_interfaces) StdoutLine: {'line': b'[ 84%] Built target task_2_interfaces__rosidl_generator_py\n'}
+[5.912799] (task_2_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[5.914168] (task_2_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[5.981405] (-) TimerEvent: {}
+[6.029861] (task_2_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.083783] (-) TimerEvent: {}
+[6.093098] (task_2_interfaces) StdoutLine: {'line': b'[ 92%] Built target task_2_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.094994] (task_2_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.124653] (task_2_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/task_2_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[6.173115] (task_2_interfaces) StdoutLine: {'line': b'[ 97%] Built target task_2_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[6.184183] (-) TimerEvent: {}
+[6.264735] (task_2_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.289432] (-) TimerEvent: {}
+[6.310924] (task_2_interfaces) StdoutLine: {'line': b'[100%] Built target task_2_interfaces__rosidl_typesupport_c__pyext\n'}
+[6.331689] (task_2_interfaces) CommandEnded: {'returncode': 0}
+[6.332300] (task_2_interfaces) JobProgress: {'identifier': 'task_2_interfaces', 'progress': 'install'}
+[6.340278] (task_2_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/me597/ME-597/Lab1ws/build/task_2_interfaces'], 'cwd': '/home/me597/ME-597/Lab1ws/build/task_2_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'me597'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/me597'), ('OLDPWD', '/home/me597/ME-597/Lab1ws/task_2_interfaces'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1621'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'me597'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'me597'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/me597:@/tmp/.ICE-unix/1601,unix/me597:/tmp/.ICE-unix/1601'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b653529e_9cca_433d_a21a_4995305ce78f'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PWVU02'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '10'), ('AMENT_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/me597/ME-597/Lab1ws/build/task_2_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/me597/ME-597/Lab1ws/install/task_2:/home/me597/ME-597/Lab1ws/install/task_1:/opt/ros/humble')]), 'shell': False}
+[6.352147] (task_2_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.352561] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/ament_index/resource_index/rosidl_interfaces/task_2_interfaces\n'}
+[6.352847] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.354132] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.355240] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/joint_data.h\n'}
+[6.356250] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[6.356353] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.356399] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__functions.h\n'}
+[6.356459] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__struct.h\n'}
+[6.356504] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__functions.c\n'}
+[6.356547] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__type_support.h\n'}
+[6.356595] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.357037] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.357137] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__functions.h\n'}
+[6.357222] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__functions.c\n'}
+[6.357267] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__type_support.h\n'}
+[6.357458] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__struct.h\n'}
+[6.357538] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/joint_state.h\n'}
+[6.357814] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/library_path.sh\n'}
+[6.358011] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/library_path.dsv\n'}
+[6.358241] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_generator_c.so\n'}
+[6.358757] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_generator_c.so" to ""\n'}
+[6.358933] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.359058] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.359298] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.359352] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__rosidl_typesupport_fastrtps_c.h\n'}
+[6.359482] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.361973] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.362053] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.362109] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__rosidl_typesupport_fastrtps_c.h\n'}
+[6.362150] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[6.362189] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[6.362233] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.362272] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.362311] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[6.362350] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.363611] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__type_support.hpp\n'}
+[6.363683] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__builder.hpp\n'}
+[6.363720] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__struct.hpp\n'}
+[6.363754] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__traits.hpp\n'}
+[6.363792] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/joint_data.hpp\n'}
+[6.363825] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.363859] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.363891] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__traits.hpp\n'}
+[6.363924] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__type_support.hpp\n'}
+[6.363957] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__builder.hpp\n'}
+[6.363990] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__struct.hpp\n'}
+[6.364022] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/joint_state.hpp\n'}
+[6.364054] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.364086] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.364118] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.364151] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.364183] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/dds_fastrtps\n'}
+[6.368487] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.368567] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.368608] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.368645] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.368682] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/dds_fastrtps\n'}
+[6.368723] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.368763] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[6.368798] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.368833] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.368868] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.368903] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.368939] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__rosidl_typesupport_introspection_c.h\n'}
+[6.368974] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__type_support.c\n'}
+[6.369010] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.369046] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.369083] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__rosidl_typesupport_introspection_c.h\n'}
+[6.369119] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__type_support.c\n'}
+[6.369248] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[6.369518] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[6.369651] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_c.so\n'}
+[6.369894] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[6.370013] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces\n'}
+[6.370116] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg\n'}
+[6.370208] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail\n'}
+[6.370521] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.370611] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/msg/detail/joint_data__type_support.cpp\n'}
+[6.370776] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv\n'}
+[6.370876] (task_2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail\n'}
+[6.370975] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.371302] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/include/task_2_interfaces/task_2_interfaces/srv/detail/joint_state__type_support.cpp\n'}
+[6.371394] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[6.371698] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[6.371848] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_cpp.so\n'}
+[6.372136] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[6.372259] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/pythonpath.sh\n'}
+[6.372424] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/pythonpath.dsv\n'}
+[6.372595] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces-0.0.0-py3.10.egg-info\n'}
+[6.372980] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[6.373055] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[6.373276] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[6.373346] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[6.373654] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces\n'}
+[6.373745] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.373936] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.374168] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[6.374231] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg\n'}
+[6.374470] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg/_joint_data.py\n'}
+[6.374558] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg/_joint_data_s.c\n'}
+[6.374696] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg/__init__.py\n'}
+[6.374835] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.374988] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.375420] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/__init__.py\n'}
+[6.375513] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/libtask_2_interfaces__rosidl_generator_py.so\n'}
+[6.375680] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/_task_2_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.375827] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv\n'}
+[6.376087] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv/_joint_state.py\n'}
+[6.376162] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv/_joint_state_s.c\n'}
+[6.377811] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv/__init__.py\n'}
+[6.390006] (-) TimerEvent: {}
+[6.407793] (task_2_interfaces) StdoutLine: {'line': b"Listing '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces'...\n"}
+[6.407959] (task_2_interfaces) StdoutLine: {'line': b"Compiling '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/__init__.py'...\n"}
+[6.408011] (task_2_interfaces) StdoutLine: {'line': b"Listing '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg'...\n"}
+[6.408124] (task_2_interfaces) StdoutLine: {'line': b"Compiling '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg/__init__.py'...\n"}
+[6.408176] (task_2_interfaces) StdoutLine: {'line': b"Compiling '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/msg/_joint_data.py'...\n"}
+[6.408214] (task_2_interfaces) StdoutLine: {'line': b"Listing '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv'...\n"}
+[6.408260] (task_2_interfaces) StdoutLine: {'line': b"Compiling '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv/__init__.py'...\n"}
+[6.408298] (task_2_interfaces) StdoutLine: {'line': b"Compiling '/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/srv/_joint_state.py'...\n"}
+[6.411962] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.412559] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.412833] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.413112] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.413328] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.413677] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/local/lib/python3.10/dist-packages/task_2_interfaces/task_2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.413762] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_generator_py.so\n'}
+[6.414455] (task_2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/me597/ME-597/Lab1ws/install/task_2_interfaces/lib/libtask_2_interfaces__rosidl_generator_py.so" to ""\n'}
+[6.414589] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/msg/JointData.idl\n'}
+[6.414811] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/srv/JointState.idl\n'}
+[6.415058] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/msg/JointData.msg\n'}
+[6.415220] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/srv/JointState.srv\n'}
+[6.415290] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/srv/JointState_Request.msg\n'}
+[6.415686] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/srv/JointState_Response.msg\n'}
+[6.415773] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/ament_index/resource_index/package_run_dependencies/task_2_interfaces\n'}
+[6.415955] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/ament_index/resource_index/parent_prefix_path/task_2_interfaces\n'}
+[6.416181] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/ament_prefix_path.sh\n'}
+[6.416651] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/ament_prefix_path.dsv\n'}
+[6.416713] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/path.sh\n'}
+[6.416775] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/environment/path.dsv\n'}
+[6.416939] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/local_setup.bash\n'}
+[6.417121] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/local_setup.sh\n'}
+[6.419350] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/local_setup.zsh\n'}
+[6.422230] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/local_setup.dsv\n'}
+[6.422309] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/package.dsv\n'}
+[6.422352] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/ament_index/resource_index/packages/task_2_interfaces\n'}
+[6.422390] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_generator_cExport.cmake\n'}
+[6.422437] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.422474] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.422515] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.422555] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_generator_cppExport.cmake\n'}
+[6.425533] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.430236] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.430310] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.430349] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.430385] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[6.430418] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.430452] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.430485] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.430518] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[6.430557] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.430590] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_generator_pyExport.cmake\n'}
+[6.430623] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/export_task_2_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.430655] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[6.430688] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.430721] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.430864] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.431042] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.431284] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.431464] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[6.431632] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfacesConfig.cmake\n'}
+[6.431826] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/cmake/task_2_interfacesConfig-version.cmake\n'}
+[6.431995] (task_2_interfaces) StdoutLine: {'line': b'-- Installing: /home/me597/ME-597/Lab1ws/install/task_2_interfaces/share/task_2_interfaces/package.xml\n'}
+[6.435384] (task_2_interfaces) CommandEnded: {'returncode': 0}
+[6.466323] (task_2_interfaces) JobEnded: {'identifier': 'task_2_interfaces', 'rc': 0}
+[6.468544] (-) EventReactorShutdown: {}
