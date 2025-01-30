@@ -24,14 +24,14 @@ class MinimalSubscriber(Node):
         super().__init__('minimal_subscriber')
         self.subscription = self.create_subscription(
             Float32,
-            'topic',
+            'my_first_topic',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        doubled_data = self.i * 2
-        self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: ' % msg.data)
+        doubled_data = msg.data * 2
+        self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: %.2f' % msg.data % doubled_data)
 
 
 def main(args=None):
