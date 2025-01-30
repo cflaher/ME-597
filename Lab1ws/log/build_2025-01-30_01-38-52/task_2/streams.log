@@ -1,0 +1,29 @@
+[0.405s] Invoking command in '/home/me597/ME-597/Lab1ws/task_2': PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_2 build --build-base /home/me597/ME-597/Lab1ws/build/task_2/build install --record /home/me597/ME-597/Lab1ws/build/task_2/install.log --single-version-externally-managed install_data
+[0.556s] running egg_info
+[0.556s] writing ../build/task_2/task_2.egg-info/PKG-INFO
+[0.556s] writing dependency_links to ../build/task_2/task_2.egg-info/dependency_links.txt
+[0.556s] writing entry points to ../build/task_2/task_2.egg-info/entry_points.txt
+[0.556s] writing requirements to ../build/task_2/task_2.egg-info/requires.txt
+[0.557s] writing top-level names to ../build/task_2/task_2.egg-info/top_level.txt
+[0.558s] reading manifest file '../build/task_2/task_2.egg-info/SOURCES.txt'
+[0.558s] adding license file 'LICENSE'
+[0.559s] writing manifest file '../build/task_2/task_2.egg-info/SOURCES.txt'
+[0.559s] running build
+[0.559s] running build_py
+[0.559s] copying task_2/service.py -> /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2
+[0.559s] copying task_2/client.py -> /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2
+[0.559s] running install
+[0.559s] running install_lib
+[0.560s] copying /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2/service.py -> /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2
+[0.561s] copying /home/me597/ME-597/Lab1ws/build/task_2/build/lib/task_2/client.py -> /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2
+[0.561s] byte-compiling /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2/service.py to service.cpython-310.pyc
+[0.561s] byte-compiling /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2/client.py to client.cpython-310.pyc
+[0.561s] running install_data
+[0.561s] running install_egg_info
+[0.563s] removing '/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info' (and everything under it)
+[0.565s] Copying ../build/task_2/task_2.egg-info to /home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages/task_2-0.0.0-py3.10.egg-info
+[0.565s] running install_scripts
+[0.581s] Installing listener script to /home/me597/ME-597/Lab1ws/install/task_2/lib/task_2
+[0.582s] Installing talker script to /home/me597/ME-597/Lab1ws/install/task_2/lib/task_2
+[0.582s] writing list of installed files to '/home/me597/ME-597/Lab1ws/build/task_2/install.log'
+[0.598s] Invoked command in '/home/me597/ME-597/Lab1ws/task_2' returned '0': PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_2 build --build-base /home/me597/ME-597/Lab1ws/build/task_2/build install --record /home/me597/ME-597/Lab1ws/build/task_2/install.log --single-version-externally-managed install_data

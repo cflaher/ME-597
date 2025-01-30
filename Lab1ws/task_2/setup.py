@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             'talker = task_2.publisher_member_function:main',
             'listener = task_2.subscriber_member_function:main'
+            'service = task_2.service:main',
+            'client = task_2.client:main',
         ],
     },
 )
