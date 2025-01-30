@@ -30,7 +30,7 @@ class MinimalSubscriber(Node):
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        doubled_data = self.i * 2
+        doubled_data = msg.data * 2
         self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: ' % msg.data)
 
 

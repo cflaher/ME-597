@@ -1,0 +1,3 @@
+[console_scripts]
+talker = task_1.publisher_member_function:main
+

@@ -18,33 +18,34 @@ from rclpy.node import Node
 from std_msgs.msg import Float32
 
 
-class MinimalSubscriber(Node):
+class MinimalPublisher(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
-        self.subscription = self.create_subscription(
-            Float32,
-            'topic',
-            self.listener_callback,
-            10)
-        self.subscription  # prevent unused variable warning
+        super().__init__('minimal_publisher')
+        self.publisher_ = self.create_publisher(Float32, 'my_first_topic', 10)
+        timer_period = 1  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
 
-    def listener_callback(self, msg):
-        doubled_data = self.i * 2
-        self.get_logger().info('Quantity of data: "%.2f". \nDouble quantity: ' % msg.data)
+    def timer_callback(self):
+        msg = Float32()
+        msg.data = 'Hello World: %d' % self.i
+        self.publisher_.publish(msg)
+        self.get_logger().info('Publishing: "%.2f"' % msg.data)
+        self.i += 1
 
 
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_subscriber = MinimalSubscriber()
+    minimal_publisher = MinimalPublisher()
 
-    rclpy.spin(minimal_subscriber)
+    rclpy.spin(minimal_publisher)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    minimal_subscriber.destroy_node()
+    minimal_publisher.destroy_node()
     rclpy.shutdown()
 
 
