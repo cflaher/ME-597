@@ -6,13 +6,13 @@ def generate_launch_description():
         Node(
             package='task_2',
             executable='talker',
-            name='publisher_node',
+            name='publisher_member_function',
             output='screen'
         ),
         Node(
             package='task_2',
             executable='service',
-            name='service_node',
+            name='service',
             output='screen'
         )
     ])

@@ -24,9 +24,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = task_2.publisher_node:main',
-            'service = task_2.service_node:main',
-            'client = task_2.client_node:main',
+            'talker = task_2.publisher_member_function:main',
+            'service = task_2.service:main',
+            'client = task_2.client:main',
         ],
     },
 )
