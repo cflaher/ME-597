@@ -1,0 +1,23 @@
+[0.689s] Invoking command in '/home/me597/ME-597/Lab1ws/task_1': PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_1 build --build-base /home/me597/ME-597/Lab1ws/build/task_1/build install --record /home/me597/ME-597/Lab1ws/build/task_1/install.log --single-version-externally-managed install_data
+[0.847s] running egg_info
+[0.847s] writing ../build/task_1/task_1.egg-info/PKG-INFO
+[0.847s] writing dependency_links to ../build/task_1/task_1.egg-info/dependency_links.txt
+[0.847s] writing entry points to ../build/task_1/task_1.egg-info/entry_points.txt
+[0.847s] writing requirements to ../build/task_1/task_1.egg-info/requires.txt
+[0.847s] writing top-level names to ../build/task_1/task_1.egg-info/top_level.txt
+[0.850s] reading manifest file '../build/task_1/task_1.egg-info/SOURCES.txt'
+[0.850s] adding license file 'LICENSE'
+[0.850s] writing manifest file '../build/task_1/task_1.egg-info/SOURCES.txt'
+[0.850s] running build
+[0.850s] running build_py
+[0.850s] running install
+[0.851s] running install_lib
+[0.852s] running install_data
+[0.852s] running install_egg_info
+[0.854s] removing '/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages/task_1-0.0.0-py3.10.egg-info' (and everything under it)
+[0.857s] Copying ../build/task_1/task_1.egg-info to /home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages/task_1-0.0.0-py3.10.egg-info
+[0.864s] running install_scripts
+[0.875s] Installing listener script to /home/me597/ME-597/Lab1ws/install/task_1/lib/task_1
+[0.875s] Installing talker script to /home/me597/ME-597/Lab1ws/install/task_1/lib/task_1
+[0.875s] writing list of installed files to '/home/me597/ME-597/Lab1ws/build/task_1/install.log'
+[0.895s] Invoked command in '/home/me597/ME-597/Lab1ws/task_1' returned '0': PYTHONPATH=/home/me597/ME-597/Lab1ws/build/task_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/Lab1ws/install/task_1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_1 build --build-base /home/me597/ME-597/Lab1ws/build/task_1/build install --record /home/me597/ME-597/Lab1ws/build/task_1/install.log --single-version-externally-managed install_data
