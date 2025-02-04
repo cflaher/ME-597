@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from task_2_interfaces.srv import JointState
@@ -14,13 +13,13 @@ class JointStateServer(Node):
         self.get_logger().info('Joint State Server is ready.')
 
     def handle_joint_state(self, request, response):
-        # Calculate sum of joint values
+        # Calculate sum
         total = request.x + request.y + request.z
         
-        # Set response based on sum
+        # Set true or false depending on sum
         response.valid = total >= 0
         
-        # Log the request and response
+        # Print the request and response to log
         self.get_logger().info(
             f'Request: x={request.x:.2f}, y={request.y:.2f}, z={request.z:.2f}, ' 
             f'Sum={total:.2f}, Response={response.valid}'
