@@ -30,6 +30,8 @@ class PidController(Node):
         self.timer_period = 0.1  # seconds
         self.timer = self.create_timer(self.timer_period, self.control)
 
+        self.get_logger().info("PID Controller started")
+
         # pid variables
         self.current_distance = 0
         self.error = 0

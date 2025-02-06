@@ -43,7 +43,7 @@ class PidController(Node):
 
     def control(self):
         # calculate errors
-        self.error = self.target_dist - self.current_distance
+        self.error = -self.target_dist + self.current_distance
         self.integral_error += self.error * self.timer_period
         self.derivative_error = (self.error - self.prev_error) / self.timer_period
         self.prev_error = self.error
