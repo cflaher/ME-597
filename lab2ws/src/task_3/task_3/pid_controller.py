@@ -14,8 +14,8 @@ class pid_controller(Node):
         # global params
         self.target_dist = 0.35
         self.kp = 0.9
-        self.ki = 0.9
-        self.kd = 0.9
+        self.ki = 0.1
+        self.kd = 0.1
 
         self.subscription = self.create_subscription(
             LaserScan,
@@ -27,7 +27,6 @@ class pid_controller(Node):
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.timer_period = 0.1  # seconds
         self.timer = self.create_timer(self.timer_period, self.control_loop)
-        self.i = 0
 
         self.current_distance = 0
 
@@ -35,9 +34,7 @@ class pid_controller(Node):
         self.current_distance = msg.ranges[0]
 
     def control(self, cmd):
-        if self.current_distance is None:
-            return
-        
+    
         self.error = 0
         self.integral_error = 0
         self.error_last = 0
@@ -50,34 +47,29 @@ class pid_controller(Node):
         self.prev_error = self.error
         self.output = self.kp * self.error + self.ki * self.integral_error + self.kd * self.derivative_error
         
-    
+        cmd = Twist()
         if self.output > 0.15:
             self.output -= .1
         elif self.output < -0.15:
             self.output += .01
-
-
-        cmd = Twist()
+        
         cmd.linear.x = self.output
         cmd.angular.z = 0.0
         self.publisher.publish(cmd)
 
         self.prev_error = self.error
     
-        self.get_logger().info('I heard: "%s"' % msg.data)
-
-
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_subscriber = MinimalSubscriber()
+    pid_controller = pid_controller()
 
-    rclpy.spin(minimal_subscriber)
+    rclpy.spin(pid_controller)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    minimal_subscriber.destroy_node()
+    pid_controller.destroy_node()
     rclpy.shutdown()
 
 
