@@ -44,7 +44,7 @@ class PidController(Node):
     def lidar_callback(self, msg):
         self.current_distance = msg.ranges[0]
 
-        self.get_logger().info("distance: %f", self.current_distance)
+        self.get_logger().info(f"distance: {self.current_distance:.2f}")
 
     def control(self):
         # calculate errors

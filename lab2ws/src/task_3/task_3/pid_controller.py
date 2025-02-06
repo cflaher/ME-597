@@ -12,9 +12,9 @@ class PidController(Node):
         super().__init__('pid_controller')
 
         # pid params
-        self.target_dist = 0.35
+        self.target_dist = 0.5
         self.kp = 0.9
-        self.ki = 0.1
+        self.ki = 0.0
         self.kd = 0.1
 
         # subscriber
