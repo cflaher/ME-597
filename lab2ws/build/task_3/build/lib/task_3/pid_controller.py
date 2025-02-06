@@ -21,7 +21,7 @@ class PidController(Node):
         self.subscription = self.create_subscription(
             LaserScan,
             'scan',
-            self.listener_callback,
+            self.lidar_callback,
             10)
         self.subscription  # prevent unused variable warning
 
@@ -29,6 +29,8 @@ class PidController(Node):
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.timer_period = 0.1  # seconds
         self.timer = self.create_timer(self.timer_period, self.control)
+
+        self.get_logger().info("PID Controller started")
 
         # pid variables
         self.current_distance = 0
@@ -38,7 +40,7 @@ class PidController(Node):
         self.derivative_error = 0
         self.output = 0
 
-    def listener_callback(self, msg):
+    def lidar_callback(self, msg):
         self.current_distance = msg.ranges[0]
 
     def control(self):
