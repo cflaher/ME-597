@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import String
+from task_3_interfaces.sensor_msgs import LaserScan
 
 class MinimalPublisher(Node):
 
@@ -13,10 +14,10 @@ class MinimalPublisher(Node):
         self.i = 0
 
     def timer_callback(self):
-        msg = String()
-        msg.data = 'Hello World: %d' % self.i
-        self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
+
+        dist.data = 'Hello World: %d' % self.i
+        self.publisher_.publish(output)
+        self.get_logger().info('Publishing: "%s"' % LaserScan.msg)
         self.i += 1
 
 
@@ -42,13 +43,25 @@ class MinimalSubscriber(Node):
     def __init__(self):
         super().__init__('minimal_subscriber')
         self.subscription = self.create_subscription(
-            String,
+            LaserScan,
             'scan',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
+        target_dist = 35
+        Kp = 0.9
+        Ki = 0.9
+        Kd = 0.9
+
+        dist = LaserScan()
+        dist.range_min = float32()
+        error = target_dist - dist
+        integral = integral + error * time_increment
+        derivative = error - prevError
+        output = Kp * error + Ki * integral + Kd * derivative
+
         self.get_logger().info('I heard: "%s"' % msg.data)
 
 
