@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pid_controller = task_3.pid_controller:main'
+            'pid_speed_controller = task_3.pid_controller:main'
         ],
     },
 )

@@ -1,10 +1,12 @@
-import launch
-import launch_ros.actions
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
 
 def generate_launch_description():
-    return launch.LaunchDescription([
-        launch_ros.actions.Node(
+    return LaunchDescription([
+        Node(
             package='task_3',
-            executable='pid_controller',
-            name='pid_controller'),
-  ])
+            executable='pid_speed_controller',
+            name='pid_speed_controller',
+            output='screen')
+    ])
