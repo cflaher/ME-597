@@ -1,0 +1,25 @@
+[0.674s] Invoking command in '/home/me597/ME-597/lab2ws/src/task_3': PYTHONPATH=/home/me597/ME-597/lab2ws/build/task_3/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_3 build --build-base /home/me597/ME-597/lab2ws/build/task_3/build install --record /home/me597/ME-597/lab2ws/build/task_3/install.log --single-version-externally-managed install_data
+[0.867s] running egg_info
+[0.869s] writing ../../build/task_3/task_3.egg-info/PKG-INFO
+[0.870s] writing dependency_links to ../../build/task_3/task_3.egg-info/dependency_links.txt
+[0.871s] writing entry points to ../../build/task_3/task_3.egg-info/entry_points.txt
+[0.873s] writing requirements to ../../build/task_3/task_3.egg-info/requires.txt
+[0.873s] writing top-level names to ../../build/task_3/task_3.egg-info/top_level.txt
+[0.875s] reading manifest file '../../build/task_3/task_3.egg-info/SOURCES.txt'
+[0.876s] adding license file 'LICENSE'
+[0.876s] writing manifest file '../../build/task_3/task_3.egg-info/SOURCES.txt'
+[0.877s] running build
+[0.877s] running build_py
+[0.878s] copying task_3/pid_controller.py -> /home/me597/ME-597/lab2ws/build/task_3/build/lib/task_3
+[0.878s] running install
+[0.879s] running install_lib
+[0.880s] copying /home/me597/ME-597/lab2ws/build/task_3/build/lib/task_3/pid_controller.py -> /home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages/task_3
+[0.880s] byte-compiling /home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages/task_3/pid_controller.py to pid_controller.cpython-310.pyc
+[0.882s] running install_data
+[0.884s] running install_egg_info
+[0.885s] removing '/home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages/task_3-0.0.0-py3.10.egg-info' (and everything under it)
+[0.891s] Copying ../../build/task_3/task_3.egg-info to /home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages/task_3-0.0.0-py3.10.egg-info
+[0.897s] running install_scripts
+[0.910s] Installing pid_controller script to /home/me597/ME-597/lab2ws/install/task_3/lib/task_3
+[0.913s] writing list of installed files to '/home/me597/ME-597/lab2ws/build/task_3/install.log'
+[0.927s] Invoked command in '/home/me597/ME-597/lab2ws/src/task_3' returned '0': PYTHONPATH=/home/me597/ME-597/lab2ws/build/task_3/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab2ws/install/task_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_3 build --build-base /home/me597/ME-597/lab2ws/build/task_3/build install --record /home/me597/ME-597/lab2ws/build/task_3/install.log --single-version-externally-managed install_data

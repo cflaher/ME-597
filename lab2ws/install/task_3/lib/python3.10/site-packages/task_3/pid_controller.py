@@ -14,7 +14,7 @@ class PidController(Node):
         # pid params
         self.target_dist = 0.35
         self.kp = 0.9
-        self.ki = 0.1
+        self.ki = 0.00001
         self.kd = 0.1
 
         # subscriber
@@ -29,6 +29,8 @@ class PidController(Node):
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.timer_period = 0.1  # seconds
         self.timer = self.create_timer(self.timer_period, self.control)
+
+        self.start_time = self.get_clock().now().nanoseconds * 1e-9
 
         self.get_logger().info("PID Controller started")
         
@@ -54,6 +56,9 @@ class PidController(Node):
         self.prev_error = self.error
         self.output = self.kp * self.error + self.ki * self.integral_error + self.kd * self.derivative_error
         
+        current_time = self.get_clock().now().nanoseconds * 1e-9 - self.start_time
+        self.get_logger().info(f"Current ROS time: {current_time:.2f} seconds\n")
+
         cmd = Twist()
         if self.output > 0.15:
             self.output = 0.15
