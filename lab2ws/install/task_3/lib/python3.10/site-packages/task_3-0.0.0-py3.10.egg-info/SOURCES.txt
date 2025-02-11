@@ -9,6 +9,7 @@ setup.py
 ../../build/task_3/task_3.egg-info/requires.txt
 ../../build/task_3/task_3.egg-info/top_level.txt
 ../../build/task_3/task_3.egg-info/zip-safe
+launch/pid_control_launch.py
 resource/task_3
 task_3/__init__.py
 task_3/pid_controller.py

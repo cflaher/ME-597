@@ -1,0 +1,15 @@
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/ament_index/resource_index/package_run_dependencies/task_3_interfaces
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/ament_index/resource_index/parent_prefix_path/task_3_interfaces
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/environment/ament_prefix_path.sh
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/environment/ament_prefix_path.dsv
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/environment/path.sh
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/environment/path.dsv
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/local_setup.bash
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/local_setup.sh
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/local_setup.zsh
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/local_setup.dsv
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/package.dsv
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/ament_index/resource_index/packages/task_3_interfaces
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/cmake/task_3_interfacesConfig.cmake
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/cmake/task_3_interfacesConfig-version.cmake
+/home/me597/ME-597/lab2ws/src/install/task_3_interfaces/share/task_3_interfaces/package.xml

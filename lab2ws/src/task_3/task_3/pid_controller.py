@@ -13,9 +13,9 @@ class PidController(Node):
 
         # pid params
         self.target_dist = 0.35
-        self.kp = 0.9
+        self.kp = 0.5
         self.ki = 0.001
-        self.kd = 0.1
+        self.kd = 0.001
 
         # subscriber
         self.subscription = self.create_subscription(
