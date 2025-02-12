@@ -14,19 +14,19 @@ class PidController(Node):
         # pid params
         self.target_dist = 0.35
         self.kp = 0.5
-        self.ki = 0.0001
+        self.ki = 0.001
         self.kd = 0.001
 
         # subscriber
         self.subscription = self.create_subscription(
             LaserScan,
-            '/robot/scan',
+            '/scan',
             self.lidar_callback,
             10)
         self.subscription  # prevent unused variable warning
 
         #publisher
-        self.publisher = self.create_publisher(Twist, '/robot/cmd_vel', 10)
+        self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
         self.timer_period = 0.1  # seconds
         self.timer = self.create_timer(self.timer_period, self.control)
 
