@@ -9,7 +9,7 @@ from geometry_msgs.msg import Twist
 class PidController(Node):
 
     def __init__(self):
-        super().__init__('pid_controller')
+        super().__init__('pid_speed_controller')
 
         # pid params
         self.target_dist = 0.35
