@@ -14,8 +14,11 @@ class PidController(Node):
         # pid params
         self.target_dist = 0.35
         self.kp = 0.5
-        self.ki = 0.001
-        self.kd = 0.001
+        self.ki = 0.0001
+        self.kd = 0.15
+
+        #anti-windup limit
+        self.integral_limit = 0.1
 
         # subscriber
         self.subscription = self.create_subscription(
@@ -44,7 +47,7 @@ class PidController(Node):
         self.output = 0
 
     def lidar_callback(self, msg):
-        self.current_distance = msg.ranges[270]
+        self.current_distance = msg.ranges[0]
 
         self.get_logger().info(f"distance: {self.current_distance:.2f}")
 
@@ -52,6 +55,7 @@ class PidController(Node):
         # calculate errors
         self.error = -self.target_dist + self.current_distance
         self.integral_error += self.error * self.timer_period
+        self.integral_error = max(min(self.integral_error, self.integral_limit), -self.integral_limit) # anti-windup
         self.derivative_error = (self.error - self.prev_error) / self.timer_period
         self.prev_error = self.error
         self.output = self.kp * self.error + self.ki * self.integral_error + self.kd * self.derivative_error
