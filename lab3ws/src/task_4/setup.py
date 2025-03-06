@@ -27,6 +27,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'task_4 = task_4.task_4:main',
+            'auto_navigator = task_4.auto_navigator:main'
         ],
     },
 )

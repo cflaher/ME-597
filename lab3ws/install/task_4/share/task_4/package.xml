@@ -3,7 +3,7 @@
 <package format="3">
   <name>task_4</name>
   <version>0.0.0</version>
-  <description>Starts SLAM and views map in Rviz2</description>
+  <description>auto_navigator</description>
   <maintainer email="cflaherty310@gmail.com">me597</maintainer>
   <license>Apache-2.0</license>
 
