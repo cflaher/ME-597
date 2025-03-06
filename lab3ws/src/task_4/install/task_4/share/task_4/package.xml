@@ -3,17 +3,14 @@
 <package format="3">
   <name>task_4</name>
   <version>0.0.0</version>
-  <description>auto_navigator</description>
+  <description>Starts SLAM and views map in Rviz2</description>
   <maintainer email="cflaherty310@gmail.com">me597</maintainer>
   <license>Apache-2.0</license>
-
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
   <test_depend>python3-pytest</test_depend>
-  <depend>turtlebot4_navigation</depend>
-  <depend>turtlebot4_viz</depend>
 
   <export>
     <build_type>ament_python</build_type>
