@@ -3,6 +3,7 @@
 import sys
 import os
 import numpy as np
+import math
 
 import rclpy
 from rclpy.node import Node
@@ -28,7 +29,7 @@ import pandas as pd
 from copy import copy, deepcopy
 import time
 
-class Queue():
+class AStarQueue():
     def __init__(self, init_queue = []):
         self.queue = copy(init_queue)
         self.start = 0
@@ -75,7 +76,7 @@ class Queue():
         self.end = len(self.queue)-1
         return p
     
-class Node():
+class GraphNode():
     def __init__(self,name):
         self.name = name
         self.children = []
@@ -177,7 +178,7 @@ class MapProcessor():
         for i in range(self.map.image_array.shape[0]):
             for j in range(self.map.image_array.shape[1]):
                 if self.inf_map_img_array[i][j] == 0:
-                    node = Node('%d,%d'%(i,j))
+                    node = GraphNode('%d,%d'%(i,j))
                     self.map_graph.add_node(node)
         # Connect the nodes through edges
         for i in range(self.map.image_array.shape[0]):
@@ -252,7 +253,7 @@ class Navigation(Node):
     path follower components to move the turtlebot from position A to B.
     """
 
-    def __init__(self, node_name='auto_navigator'):
+    def __init__(self, in_tree, node_name='Navigation'):
         """! Class constructor.
         @param  None.
         @return An instance of the Navigation class.
@@ -263,6 +264,22 @@ class Navigation(Node):
         self.goal_pose = PoseStamped()
         self.ttbot_pose = PoseStamped()
         self.start_time = 0.0
+
+        # pid distance variables
+        self.current_distance = 0
+        self.dist_error = 0
+        self.dist_integral_error = 0
+        self.prev_dist_error = 0
+        self.dist_derivative_error = 0
+        self.dist_output = 0
+
+        # pid heading variables
+        self.current_heading = 0
+        self.heading_error = 0
+        self.heading_integral_error = 0
+        self.prev_heading_error = 0
+        self.heading_derivative_error = 0
+        self.heading_output = 0
 
         # Subscribers
         self.create_subscription(PoseStamped, '/move_base_simple/goal', self.__goal_pose_cbk, 10)
@@ -276,6 +293,19 @@ class Navigation(Node):
         # Node rate
         self.rate = self.create_rate(10)
 
+        # A* path planner variables
+        self.in_tree = in_tree
+        self.q = AStarQueue()  # FIFO queue
+        self.dist = {name: np.Inf for name, node in in_tree.g.items()}  # g-score
+        self.h = {name: 0 for name, node in in_tree.g.items()}  # Heuristic (h-score)
+        self.via = {name: None for name, node in in_tree.g.items()}  # Path tracking
+
+        # Compute heuristic values (Euclidean distance)
+        for name, node in in_tree.g.items():
+            start = tuple(map(int, name.split(',')))
+            end = tuple(map(int, self.in_tree.end.split(',')))
+            self.h[name] = np.sqrt((end[0] - start[0])**2 + (end[1] - start[1])**2)
+
     def __goal_pose_cbk(self, data):
         """! Callback to catch the goal pose.
         @param  data    PoseStamped object from RVIZ.
@@ -284,6 +314,7 @@ class Navigation(Node):
         self.goal_pose = data
         self.get_logger().info(
             'goal_pose: {:.4f}, {:.4f}'.format(self.goal_pose.pose.position.x, self.goal_pose.pose.position.y))
+        
 
     def __ttbot_pose_cbk(self, data):
         """! Callback to catch the position of the vehicle.
@@ -294,13 +325,23 @@ class Navigation(Node):
         self.get_logger().info(
             'ttbot_pose: {:.4f}, {:.4f}'.format(self.ttbot_pose.pose.position.x, self.ttbot_pose.pose.position.y))
 
+    def __get_f_score(self, node):
+        """Calculate f = g + h for a node."""
+        idx = node.name
+        return self.dist[idx] + self.h[idx]
+
     def a_star_path_planner(self, start_pose, end_pose):
         """! A Start path planner.
         @param  start_pose    PoseStamped object containing the start of the path to be created.
         @param  end_pose      PoseStamped object containing the end of the path to be created.
         @return path          Path object containing the sequence of waypoints of the created path.
         """
-        mp = MapProcessor('map')
+
+        # fig, ax = plt.subplots(dpi=100)
+        # plt.imshow(mp.inf_map_img_array)
+        # plt.colorbar()
+        # plt.show()
+
         path = Path()
         self.get_logger().info(
             'A* planner.\n> start: {},\n> end: {}'.format(start_pose.pose.position, end_pose.pose.position))
@@ -309,93 +350,101 @@ class Navigation(Node):
         path.poses.append(start_pose)
         path.poses.append(end_pose)
 
-        import numpy as np
-        import queue as Queue
+        resolution = 0.06596
+        #maybe get separate resolution for x and y
 
-        class AStar():
-            def __init__(self, in_tree):
-                self.in_tree = in_tree
-                self.q = Queue.Queue()  # FIFO queue
-                self.dist = {name: np.Inf for name, node in in_tree.g.items()}  # g-score
-                self.h = {name: 0 for name, node in in_tree.g.items()}  # Heuristic (h-score)
-                self.via = {name: None for name, node in in_tree.g.items()}  # Path tracking
-                
-                # Compute heuristic values (Euclidean distance)
-                for name, node in in_tree.g.items():
-                    start = tuple(map(int, name.split(',')))
-                    end = tuple(map(int, self.in_tree.end.split(',')))
-                    self.h[name] = np.sqrt((end[0] - start[0])**2 + (end[1] - start[1])**2)
+        # offset in meters
+        offset_x = -4.11190128326416
+        offset_y = 4.312996864318848
 
-                
+        # determine start node and end node
+        end_pose_x_nodes = (end_pose.pose.position.x - offset_x) * resolution
+        end_pose_y_nodes = (end_pose.pose.position.y - offset_y) * resolution
 
-            def __get_f_score(self, node):
-                """Calculate f = g + h for a node."""
-                idx = node.name
-                return self.dist[idx] + self.h[idx]
+        start_pose_x_nodes = (self.ttbot_pose.pose.position.x - offset_x) * resolution
+        start_pose_y_nodes = (self.ttbot_pose.pose.position.y - offset_y) * resolution 
 
-            def solve(self, sn, en):
-                """A* pathfinding from start node `sn` to end node `en`."""
-                self.dist[sn.name] = 0  # Set start node distance to 0
-                self.q.put(sn)  # Enqueue start node
+        sn = f"{int(start_pose_x_nodes)},{int(start_pose_y_nodes)}"
+        en = f"{int(end_pose_x_nodes)},{int(end_pose_y_nodes)}"
 
-                while not self.q.empty():
-                    # Sort queue based on f-score and get the best node
-                    nodes = list(self.q.queue)
-                    nodes.sort(key=self.__get_f_score)  # Sort by f-score
-                    u = nodes.pop(0)  # Pick the best node
-                    print(u.name,self.q.queue)
-                    self.q.queue.clear()
-                    for n in nodes:
-                        self.q.put(n)  # Re-add remaining nodes
+        
+        """A* pathfinding from start node `sn` to end node `en`."""
+        self.dist[sn.name] = 0  # Set start node distance to 0
+        self.q.put(sn)  # Enqueue start node
 
-                    # Stop if we reach the goal
-                    if u.name == en.name:
-                        break
+        while not self.q.empty():
+            # Sort queue based on f-score and get the best node
+            nodes = list(self.q.queue)
+            nodes.sort(key=self.__get_f_score)  # Sort by f-score
+            u = nodes.pop(0)  # Pick the best node
+            print(u.name,self.q.queue)
+            self.q.queue.clear()
+            for n in nodes:
+                self.q.put(n)  # Re-add remaining nodes
 
-                    # Explore neighbors
-                    for i in range(len(u.children)):
-                        c = u.children[i]  # Child node
-                        w = u.weight[i]  # Edge weight
-                        new_dist = self.dist[u.name] + w  # Compute g-score
+            # Stop if we reach the goal
+            if u.name == en.name:
+                break
 
-                        # If a shorter path is found, update
-                        if new_dist < self.dist[c.name]:
-                            self.dist[c.name] = new_dist
-                            self.via[c.name] = u.name  # Track path
-                            self.q.put(c)  # Add neighbor to queue
+            # Explore neighbors
+            for i in range(len(u.children)):
+                c = u.children[i]  # Child node
+                w = u.weight[i]  # Edge weight
+                new_dist = self.dist[u.name] + w  # Compute g-score
 
-            def reconstruct_path(self, sn, en):
-                """Reconstructs the shortest path from `sn` to `en`."""
-                path = []
-                u = en.name
-                dist = self.dist[u]
+                # If a shorter path is found, update
+                if new_dist < self.dist[c.name]:
+                    self.dist[c.name] = new_dist
+                    self.via[c.name] = u.name  # Track path
+                    self.q.put(c)  # Add neighbor to queue
 
-                # Backtrack from goal to start
-                while u is not None:
-                    path.append(u)
-                    u = self.via[u]
-                
-                path.reverse()  # Correct order from start → end
-                return path, dist
+        # create inflated map
+        mp = MapProcessor('map')
+        kr = mp.rect_kernel(5,1)
+        mp.inflate_map(kr,True)
+        mp.get_graph_from_map()          
 
-        mp.map_graph.root = "100,100"
-        mp.map_graph.end = "75,120"
+        # set start and end nodes on the graph
+        mp.map_graph.root = ("% 3f, % 3f" % (start_pose_x_nodes,start_pose_y_nodes))
+        mp.map_graph.end = ("% 3f, % 3f" % (end_pose_x_nodes,end_pose_y_nodes))
 
-        as_maze = AStar(mp.map_graph)
+        as_maze = Navigation(mp.map_graph)
 
+        # solve the maze
         start = time.time()
-        as_maze.solve(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
+        as_maze.a_star_path_planner(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
         end = time.time()
-        print('Elapsed Time: %.3f'%(end - start))
+        self.get_logger().info('Elapsed Time: %.3f'%(end - start))
 
-        path, dist = as_maze.reconstruct_path(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
+        # get the path in world units
+        path_in_nodes, dist = as_maze.reconstruct_path(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
+        world_path = resolution * path_in_nodes - (offset_x,offset_y)
+        
+        # print the path and distance
+        # self.get_logger().info('Path:',path)
+        # self.get_logger().info('Distance:',dist)
 
         # Do not edit below (required for autograder)
         self.astarTime = Float32()
         self.astarTime.data = float(self.get_clock().now().nanoseconds*1e-9-self.start_time)
         self.calc_time_pub.publish(self.astarTime)
+                
+        return world_path
+
+    def reconstruct_path(self, sn, en):
+        """Reconstructs the shortest path from `sn` to `en`."""
+        path = []
+        u = en.name
+        dist = self.dist[u]
+
+        # Backtrack from goal to start
+        while u is not None:
+            path.append(u)
+            u = self.via[u]
         
-        return path
+        path.reverse()  # Correct order from start → end
+        return path, dist
+        
 
     def get_path_idx(self, path, vehicle_pose):
         """! Path follower.
@@ -403,11 +452,10 @@ class Navigation(Node):
         @param  current_goal_pose     PoseStamped object containing the current vehicle position.
         @return idx                   Position in the path pointing to the next goal pose to follow.
         """
-        idx = 0
+        self.idx = 0
         # TODO: IMPLEMENT A MECHANISM TO DECIDE WHICH POINT IN THE PATH TO FOLLOW idx <= len(path)
         for idx in range(len(path.poses)):
-            if path.poses[idx] == vehicle_pose: #arbitrary distance 5
-
+            if np.sqrt((path.poses.x[idx] - vehicle_pose.x)**2 + (path.poses.y[idx] - vehicle_pose.y)**2) >= 1: #arbitrary distance 1 meter
                 break
         return idx
 
@@ -422,96 +470,63 @@ class Navigation(Node):
         
         # TODO: IMPLEMENT PATH FOLLOWER
 
+#       speed controller       
 
-        class DistancePidController(Node):
+        # pid params
+        self.kp = 0.5
+        self.ki = 0.0001
+        self.kd = 0.15
+                
+        #anti-windup limit
+        self.integral_limit = 0.1
 
-            def __init__(self):
-                super().__init__('pid_speed_controller')
+        # calculate errors
+        path = self.a_star_path_planner(vehicle_pose, current_goal_pose)
+        idx = self.get_path_idx(self.path, vehicle_pose)
+        target_point = path[idx]
 
-                # pid params
-                self.kp = 0.5
-                self.ki = 0.0001
-                self.kd = 0.15
-
-                self.path = self.a_star_path_planner(vehicle_pose, current_goal_pose)
-                self.target_heading = self.get_path_idx(self.path, vehicle_pose) #TODO: DEFINE TARGET HEADING
-                self.target_pose = self.get_path_idx(self.path, vehicle_pose) #TODO: DEFINE TARGET DISTANCE
+        self.dist_error = np.sqrt((target_point[0] - self.ttbot_pose.pose.position.x)**2 + (target_point[1] - self.ttbot_pose.pose.position.y)**2)
+        self.dist_integral_error += self.dist_error * self.timer_period
+        self.dist_integral_error = max(min(self.dist_integral_error, self.integral_limit), -self.integral_limit) # anti-windup
+        self.dist_derivative_error = (self.dist_error - self.prev_error) / self.timer_period
+        self.prev_dist_error = self.dist_error
+        self.dist_output = self.kp * self.dist_error + self.ki * self.dist_integral_error + self.kd * self.derivative_error
         
-                #anti-windup limit
-                self.integral_limit = 0.1
+        speed = self.dist_output
 
-                # pid variables
-                self.current_distance = 0
-                self.error = 0
-                self.integral_error = 0
-                self.prev_error = 0
-                self.derivative_error = 0
-                self.output = 0
+#       heading controller
+
+        # pid params
+        self.kp = 0.5
+        self.ki = 0.0001
+        self.kd = 0.15
+
+        #anti-windup limit
+        self.integral_limit = 0.1
+    
+        # calculate errors
+        q_g = self.goal_pose.pose.orientation
+        q_c = self.ttbot_pose.pose.orientation
+        goal_yaw = math.atan2(2.0*(q_g.y*q_g.z + q_g.w*q_g.x), q_g.w*q_g.w - q_g.x*q_g.x - q_g.y*q_g.y + q_g.z*q_g.z)
+        current_yaw = math.atan2(2.0*(q_c.y*q_c.z + q_c.w*q_c.x), q_c.w*q_c.w - q_c.x*q_c.x - q_c.y*q_c.y + q_c.z*q_c.z)
+
+        self.heading_error = -goal_yaw + current_yaw
+        self.heading_integral_error += self.heading_error * self.timer_period
+        self.heading_integral_error = max(min(self.heading_integral_error, self.integral_limit), -self.integral_limit) # anti-windup
+        self.heading_derivative_error = (self.heading_error - self.prev_heading_error) / self.timer_period
+        self.prev_heading_error = self.heading_error
+        self.heading_output = self.kp * self.heading_error + self.ki * self.heading_integral_error + self.kd * self.heading_derivative_error
         
-            def control(self):
-                # calculate errors
-                self.error = np.sqrt((self.goal_pose.pose.position.x - self.ttbot_pose.pose.position.x)**2 + (self.goal_pose.pose.position.y - self.ttbot_pose.pose.position.y)**2)
-                self.integral_error += self.error * self.timer_period
-                self.integral_error = max(min(self.integral_error, self.integral_limit), -self.integral_limit) # anti-windup
-                self.derivative_error = (self.error - self.prev_error) / self.timer_period
-                self.prev_error = self.error
-                self.output = self.kp * self.error + self.ki * self.integral_error + self.kd * self.derivative_error
-               
-                speed = self.output
-                self.prev_error = self.error
-            
-            def control_loop(self):
-                    self.control()
+        # current_time = self.get_clock().now().nanoseconds * 1e-9 - self.start_time
+        # self.get_logger().info(f"Current ROS time: {current_time:.2f} seconds\n")
+
+        cmd = Twist()
+        if self.output > 0.15:
+            self.output = 0.15
+        elif self.output < -0.15:
+            self.output = -0.15
         
-        class HeadingPidController(Node):
-
-            def __init__(self):
-                super().__init__('pid_speed_controller')
-
-                # pid params
-                self.kp = 0.5
-                self.ki = 0.0001
-                self.kd = 0.15
-
-                self.path = self.a_star_path_planner(vehicle_pose, current_goal_pose)
-                self.target_heading = self.get_path_idx(self.path, vehicle_pose) #TODO: DEFINE TARGET HEADING
-                self.target_pose = self.get_path_idx(self.path, vehicle_pose) #TODO: DEFINE TARGET DISTANCE
-                
-                #anti-windup limit
-                self.integral_limit = 0.1
-                
-                # pid variables
-                self.current_distance = 0
-                self.error = 0
-                self.integral_error = 0
-                self.prev_error = 0
-                self.derivative_error = 0
-                self.output = 0
-
-            def control(self):
-                # calculate errors
-                self.error = -self.goal_pose.pose.orientation.w + self.ttbot_pose.pose.orientation.w
-
-                self.integral_error += self.error * self.timer_period
-                self.integral_error = max(min(self.integral_error, self.integral_limit), -self.integral_limit) # anti-windup
-                self.derivative_error = (self.error - self.prev_error) / self.timer_period
-                self.prev_error = self.error
-                self.output = self.kp * self.error + self.ki * self.integral_error + self.kd * self.derivative_error
-                
-                # current_time = self.get_clock().now().nanoseconds * 1e-9 - self.start_time
-                # self.get_logger().info(f"Current ROS time: {current_time:.2f} seconds\n")
-
-                cmd = Twist()
-                if self.output > 0.15:
-                    self.output = 0.15
-                elif self.output < -0.15:
-                    self.output = -0.15
-                
-                heading = self.output
-                self.prev_error = self.error
-            
-            def control_loop(self):
-                    self.control()
+        heading = self.heading_output
 
         return speed, heading
 
@@ -534,6 +549,8 @@ class Navigation(Node):
         @param none
         @return none
         """
+
+
         while rclpy.ok():
             # Call the spin_once to handle callbacks
             rclpy.spin_once(self, timeout_sec=0.1)  # Process callbacks without blocking
@@ -565,3 +582,32 @@ def main(args=None):
 
 if __name__ == "__main__":
     main()
+
+
+
+# where to put?
+        # # create inflated map
+        # mp = MapProcessor('map')
+        # kr = mp.rect_kernel(5,1)
+        # mp.inflate_map(kr,True)
+        # mp.get_graph_from_map()          
+
+        # # set start and end nodes on the graph
+        # mp.map_graph.root = ("% 3f, % 3f" % (start_pose_x_nodes,start_pose_y_nodes))
+        # mp.map_graph.end = ("% 3f, % 3f" % (end_pose_x_nodes,end_pose_y_nodes))
+
+        # as_maze = Navigation(mp.map_graph)
+
+        # # solve the maze
+        # start = time.time()
+        # as_maze.a_star_path_planner(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
+        # end = time.time()
+        # self.get_logger().info('Elapsed Time: %.3f'%(end - start))
+
+        # # get the path in world units
+        # path_in_nodes, dist = as_maze.reconstruct_path(mp.map_graph.g[mp.map_graph.root],mp.map_graph.g[mp.map_graph.end])
+        # world_path = resolution * path_in_nodes - (offset_x,offset_y)
+        
+        # # print the path and distance
+        # self.get_logger().info('Path:',path)
+        # self.get_logger().info('Distance:',dist)
