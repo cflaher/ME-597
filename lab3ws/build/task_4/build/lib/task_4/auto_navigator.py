@@ -392,9 +392,13 @@ class Navigation(Node):
         self.via = {name: None for name, node in self.graph.g.items()}  # Path tracking
         
         # Map-related constants
-        self.resolution = self.map_processor.map.map_df.resolution[0]
-        self.offset_x = self.map_processor.map.map_df.origin[0][0]
-        self.offset_y = self.map_processor.map.map_df.origin[0][1]
+        # self.resolution = self.map_processor.map.map_df.resolution[0]
+        # self.offset_x = self.map_processor.map.map_df.origin[0][0]
+        # self.offset_y = self.map_processor.map.map_df.origin[0][1]
+
+        self.resolution = 15.03759398
+        self.offset_y = 4.33
+        self.offset_x = -3.81
 
     def __goal_pose_cbk(self, msg):
         """Callback for receiving goal pose"""
@@ -442,10 +446,16 @@ class Navigation(Node):
         # Coordinate conversion
         def world_to_map_coords(x, y):
             """Convert world coordinates to map coordinates."""
-            map_x = int((x - self.offset_x) / self.resolution)
-            map_y = int((y - self.offset_y) / self.resolution)
-            return f"{map_x},{map_y}"
+            map_x = int((-y + self.offset_y) * self.resolution)
+            map_y = int((x - self.offset_x) * self.resolution)
         
+            node_name = f"{map_x},{map_y}"
+            
+            self.get_logger().info(f"Converting (x,y): ({x},{y}) to map coords: {node_name}")
+            self.get_logger().info(f"Is {node_name} in graph: {node_name in self.graph.g}")
+
+            return f"{map_x},{map_y}"
+            
         # Convert start and end coordinates
         start_node_name = world_to_map_coords(
             start_pose.pose.position.x, 
