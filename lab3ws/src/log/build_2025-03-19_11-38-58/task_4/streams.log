@@ -1,0 +1,25 @@
+[1.279s] Invoking command in '/home/me597/ME-597/lab3ws/src/task_4': PYTHONPATH=/home/me597/ME-597/lab3ws/src/build/task_4/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_4 build --build-base /home/me597/ME-597/lab3ws/src/build/task_4/build install --record /home/me597/ME-597/lab3ws/src/build/task_4/install.log --single-version-externally-managed install_data
+[1.689s] running egg_info
+[1.689s] writing ../build/task_4/task_4.egg-info/PKG-INFO
+[1.691s] writing dependency_links to ../build/task_4/task_4.egg-info/dependency_links.txt
+[1.692s] writing entry points to ../build/task_4/task_4.egg-info/entry_points.txt
+[1.694s] writing requirements to ../build/task_4/task_4.egg-info/requires.txt
+[1.694s] writing top-level names to ../build/task_4/task_4.egg-info/top_level.txt
+[1.699s] reading manifest file '../build/task_4/task_4.egg-info/SOURCES.txt'
+[1.701s] adding license file 'LICENSE'
+[1.701s] writing manifest file '../build/task_4/task_4.egg-info/SOURCES.txt'
+[1.702s] running build
+[1.702s] running build_py
+[1.703s] copying task_4/auto_navigator.py -> /home/me597/ME-597/lab3ws/src/build/task_4/build/lib/task_4
+[1.704s] running install
+[1.707s] running install_lib
+[1.708s] copying /home/me597/ME-597/lab3ws/src/build/task_4/build/lib/task_4/auto_navigator.py -> /home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages/task_4
+[1.713s] byte-compiling /home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages/task_4/auto_navigator.py to auto_navigator.cpython-310.pyc
+[1.720s] running install_data
+[1.725s] running install_egg_info
+[1.726s] removing '/home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages/task_4-0.0.0-py3.10.egg-info' (and everything under it)
+[1.727s] Copying ../build/task_4/task_4.egg-info to /home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages/task_4-0.0.0-py3.10.egg-info
+[1.729s] running install_scripts
+[1.759s] Installing auto_navigator script to /home/me597/ME-597/lab3ws/src/install/task_4/lib/task_4
+[1.765s] writing list of installed files to '/home/me597/ME-597/lab3ws/src/build/task_4/install.log'
+[1.798s] Invoked command in '/home/me597/ME-597/lab3ws/src/task_4' returned '0': PYTHONPATH=/home/me597/ME-597/lab3ws/src/build/task_4/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab3ws/src/install/task_4/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/task_4 build --build-base /home/me597/ME-597/lab3ws/src/build/task_4/build install --record /home/me597/ME-597/lab3ws/src/build/task_4/install.log --single-version-externally-managed install_data
