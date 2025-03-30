@@ -1,0 +1,27 @@
+[0.810s] Invoking command in '/home/me597/ME-597/lab3ws/src/task_4': PYTHONPATH=/home/me597/ME-597/lab3ws/build/task_4/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_4 build --build-base /home/me597/ME-597/lab3ws/build/task_4/build install --record /home/me597/ME-597/lab3ws/build/task_4/install.log --single-version-externally-managed install_data
+[1.108s] running egg_info
+[1.108s] writing ../../build/task_4/task_4.egg-info/PKG-INFO
+[1.109s] writing dependency_links to ../../build/task_4/task_4.egg-info/dependency_links.txt
+[1.110s] writing entry points to ../../build/task_4/task_4.egg-info/entry_points.txt
+[1.111s] writing requirements to ../../build/task_4/task_4.egg-info/requires.txt
+[1.112s] writing top-level names to ../../build/task_4/task_4.egg-info/top_level.txt
+[1.114s] reading manifest file '../../build/task_4/task_4.egg-info/SOURCES.txt'
+[1.114s] adding license file 'LICENSE'
+[1.120s] writing manifest file '../../build/task_4/task_4.egg-info/SOURCES.txt'
+[1.121s] running build
+[1.121s] running build_py
+[1.121s] copying task_4/auto_navigator.py -> /home/me597/ME-597/lab3ws/build/task_4/build/lib/task_4
+[1.121s] running install
+[1.121s] running install_lib
+[1.121s] copying /home/me597/ME-597/lab3ws/build/task_4/build/lib/task_4/auto_navigator.py -> /home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages/task_4
+[1.121s] byte-compiling /home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages/task_4/code_store.py to code_store.cpython-310.pyc
+[1.123s] Sorry: IndentationError: unindent does not match any outer indentation level (code_store.py, line 176)
+[1.124s] byte-compiling /home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages/task_4/auto_navigator.py to auto_navigator.cpython-310.pyc
+[1.132s] running install_data
+[1.135s] running install_egg_info
+[1.135s] removing '/home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages/task_4-0.0.0-py3.10.egg-info' (and everything under it)
+[1.141s] Copying ../../build/task_4/task_4.egg-info to /home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages/task_4-0.0.0-py3.10.egg-info
+[1.141s] running install_scripts
+[1.166s] Installing auto_navigator script to /home/me597/ME-597/lab3ws/install/task_4/lib/task_4
+[1.168s] writing list of installed files to '/home/me597/ME-597/lab3ws/build/task_4/install.log'
+[1.198s] Invoked command in '/home/me597/ME-597/lab3ws/src/task_4' returned '0': PYTHONPATH=/home/me597/ME-597/lab3ws/build/task_4/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab3ws/install/task_4/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_4 build --build-base /home/me597/ME-597/lab3ws/build/task_4/build install --record /home/me597/ME-597/lab3ws/build/task_4/install.log --single-version-externally-managed install_data

@@ -13,7 +13,7 @@ launch/gen_sync_map_launch.py
 resource/task_4
 task_4/__init__.py
 task_4/auto_navigator.py
-task_4/code_store.py
+task_4/store.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

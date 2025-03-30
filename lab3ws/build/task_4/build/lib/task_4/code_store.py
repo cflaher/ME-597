@@ -507,3 +507,246 @@ def reconstruct_path(self, start_node_name, end_node_name):
         self.get_logger().debug(f"Heading error: {math.degrees(heading_error):.1f}°, Turn rate: {heading:.2f}rad/s")
 
         return speed, heading
+
+################################################################################
+
+def path_follower(self, vehicle_pose, current_goal_pose):
+        """! Path follower with improved stability and debugging.
+        @param  vehicle_pose           PoseStamped object containing the current vehicle pose.
+        @param  current_goal_pose      PoseStamped object containing the current target from the created path.
+        @return speed, heading         Tuple containing linear speed and angular heading commands
+        """
+        # Debugging flag - set to True to print detailed information
+        DEBUG = True
+
+        # Prevent PID windup and ensure clean initialization
+        if not hasattr(self, 'prev_dist_error'):
+            self.prev_dist_error = 0.0
+            self.dist_integral_error = 0.0
+            
+        if not hasattr(self, 'prev_heading_error'):
+            self.prev_heading_error = 0.0
+            self.heading_integral_error = 0.0
+
+        # More aggressive PID parameters with anti-windup
+        kp_dist = 0.5      # Increased proportional gain for distance
+        ki_dist = 0.0      # Reduced integral gain
+        kd_dist = 0.2      # Moderate derivative gain
+        
+        kp_heading = 0.1   # Increased proportional gain for heading
+        ki_heading = 0.0   # Reduced integral gain
+        kd_heading = 0.0   # Moderate derivative gain
+
+        # Calculate distance to goal
+        dx = current_goal_pose.pose.position.x - vehicle_pose.pose.position.x
+        dy = current_goal_pose.pose.position.y - vehicle_pose.pose.position.y
+        distance = math.sqrt(dx**2 + dy**2)
+
+        # Calculate target heading (angle to goal in world frame)
+        target_heading = math.atan2(dy, dx)
+
+        # Convert quaternion to yaw
+        def quaternion_to_yaw(q):
+            siny_cosp = 2 * (q.w * q.z + q.x * q.y)
+            cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z)
+            return math.atan2(siny_cosp, cosy_cosp)
+
+        current_yaw = quaternion_to_yaw(vehicle_pose.pose.orientation)
+        self.get_logger().info(f"Current Yaw: {math.degrees(current_yaw):.2f}°")
+
+        # Calculate heading error with advanced normalization
+        heading_error = target_heading - current_yaw
+        self.get_logger().info(f"Heading error: {heading_error}")
+
+        # Distance control
+        self.dist_error = distance
+        self.dist_integral_error = max(min(self.dist_integral_error + self.dist_error * self.timer_period, 1), -1)
+        self.dist_derivative_error = (self.dist_error - self.prev_dist_error) / self.timer_period
+        
+        # Heading control
+        self.heading_error = heading_error
+        self.heading_integral_error = max(min(self.heading_integral_error + self.heading_error * self.timer_period, 1), -1)
+        self.heading_derivative_error = (self.heading_error - self.prev_heading_error) / self.timer_period
+
+        # PID calculations with additional safety checks
+        speed = (kp_dist * self.dist_error + 
+                ki_dist * self.dist_integral_error + 
+                kd_dist * self.dist_derivative_error)
+
+        heading = (kp_heading * self.heading_error + 
+                ki_heading * self.heading_integral_error + 
+                kd_heading * self.heading_derivative_error)
+
+        # Aggressive limits to prevent excessive turning
+        max_speed = 0.3      # m/s (slightly increased)
+        max_heading = 1.0    # rad/s (with more control)
+        
+        # Add heading priority when far from goal
+        if distance > 0.5:
+            # Prioritize heading correction
+            speed = min(speed, 0.1)  # Slow down while correcting heading
+        
+        if math.degrees(heading_error) > 10.0:
+            speed = 0.0  # Stop if heading error is too large
+
+        # Apply limits with additional safety
+        #speed = max(min(speed, max_speed), -max_speed)
+        #heading = max(min(heading, max_heading), -max_heading)
+
+        # Near goal behavior
+        goal_tolerance = 0.15  # 15 cm tolerance
+        if distance < goal_tolerance:
+            speed = 0.0
+            heading = 0.0
+
+        # Debugging output
+        if DEBUG:
+            print(f"Distance to goal: {distance:.3f} m")
+            print(f"Current Yaw: {math.degrees(current_yaw):.2f}°")
+            print(f"Target Heading: {math.degrees(target_heading):.2f}°")
+            print(f"Heading Error: {math.degrees(heading_error):.2f}°")
+            print(f"Computed Speed: {speed:.3f} m/s")
+            print(f"Computed Heading: {math.degrees(heading):.3f}°/s")
+            print("---")
+
+        # Update previous errors
+        self.prev_dist_error = self.dist_error
+        self.prev_heading_error = self.heading_error
+
+        return speed, heading
+
+################################################################################
+
+def run(self):
+        """! Main loop of the node. You need to wait until a new pose is published, create a path and then
+        drive the vehicle towards the final pose.
+        @param none
+        @return none
+        """
+
+        # Initialize variables
+        has_goal = False
+        path = Path()
+        
+        while rclpy.ok():
+            # Process callbacks
+            rclpy.spin_once(self, timeout_sec=0.3)
+            
+            # Check for valid poses
+            if not hasattr(self, 'ttbot_pose') or not hasattr(self, 'goal_pose'):
+                self.get_logger().warn('Waiting for valid pose information...')
+                continue
+            
+            # Check for non-zero coordinates
+            if (self.ttbot_pose.pose.position.x == 0 and 
+                self.ttbot_pose.pose.position.y == 0 and 
+                self.goal_pose.pose.position.x == 0 and 
+                self.goal_pose.pose.position.y == 0):
+                self.get_logger().warn('Received zero coordinates. Waiting for valid poses...')
+                continue    
+            
+            # If we receive a new goal, plan a new path
+            if not has_goal and self.goal_pose.header.stamp != rclpy.time.Time():
+                self.get_logger().info('New goal received, planning path...')
+                path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+                self.path_pub.publish(path)
+                has_goal = True
+
+            self.get_logger().info('run 1')
+
+            # Follow path if we have one
+            if has_goal and len(path.poses) > 0:
+                idx = self.get_path_idx(path, self.ttbot_pose)
+                
+                self.get_logger().info('run 2')
+
+                # Check if we reached the final goal
+                if idx == len(path.poses) - 1:
+                    # Check if we're close enough to the final goal
+                    dx = path.poses[-1].pose.position.x - self.ttbot_pose.pose.position.x
+                    dy = path.poses[-1].pose.position.y - self.ttbot_pose.pose.position.y
+                    if np.sqrt(dx*dx + dy*dy) < 0.1:  # 10cm tolerance
+                        self.get_logger().info('Goal reached!')
+                        self.move_ttbot(0.0, 0.0)  # Stop the robot
+                        has_goal = False
+                        continue
+                
+                self.get_logger().info('run 3')
+
+                # Follow the path
+                #current_goal = path.poses[idx]
+                current_goal = self.goal_pose
+                self.get_logger().info(f"Current goal: {current_goal.pose.position}")
+                speed, heading = self.path_follower(self.ttbot_pose, current_goal)
+                self.move_ttbot(speed, heading)
+            
+                self.get_logger().info('run 4')
+
+            self.rate.sleep()
+
+            self.get_logger().info('run 5')
+
+            #######
+
+            def timer_callback(self):
+        """! Main loop of the node. You need to wait until a new pose is published, create a path and then
+        drive the vehicle towards the final pose.
+        @param none
+        @return none
+        """
+        # while rclpy.ok():
+        #     # Call the spin_once to handle callbacks
+        #     rclpy.spin_once(self, timeout_sec=0.3)  # Process callbacks without blocking
+
+        #     # 1. Create the path to follow
+        #     path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+        #     # 2. Loop through the path and move the robot
+        #     idx = self.get_path_idx(path, self.ttbot_pose)
+        #     current_goal = path.poses[idx]
+        #     speed, heading = self.path_follower(self.ttbot_pose, current_goal)
+        #     self.move_ttbot(speed, heading)
+
+        #     self.rate.sleep()
+        #     # Sleep for the rate to control loop timing
+
+        self.get_logger().info('Timer callback executed')
+
+        # # 1. Create the path to follow
+        # path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+        # # 2. Loop through the path and move the robot
+        # idx = self.get_path_idx(path, self.ttbot_pose)
+        # current_goal = path.poses[idx]
+        # speed, heading = self.path_follower(self.ttbot_pose, current_goal)    
+
+        # Check for non-zero coordinates
+        if (self.ttbot_pose.pose.position.x == 0 and 
+            self.ttbot_pose.pose.position.y == 0 and 
+            self.goal_pose.pose.position.x == 0 and 
+            self.goal_pose.pose.position.y == 0):
+            self.get_logger().warn('Received zero coordinates. Waiting for valid poses...')
+            return    
+        
+        # If we receive a new goal, plan a new path
+        if not has_goal and self.goal_pose.header.stamp != rclpy.time.Time():
+            self.get_logger().info('New goal received, planning path...')
+            path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+            self.path_pub.publish(path)
+            has_goal = True
+
+        idx = self.get_path_idx(path, self.ttbot_pose)
+        current_goal = path.poses[idx]
+        speed, heading = self.path_follower(self.ttbot_pose, current_goal)
+
+        # Check if we reached the final goal
+        if idx == len(path.poses) - 1:
+            self.get_logger().info('Last index')
+            # Check if we're close enough to the final goal
+            dx = path.poses[-1].pose.position.x - self.ttbot_pose.pose.position.x
+            dy = path.poses[-1].pose.position.y - self.ttbot_pose.pose.position.y
+            if np.sqrt(dx*dx + dy*dy) < 0.1:  # 10cm tolerance
+                self.get_logger().info('Goal reached!')
+                self.move_ttbot(0.0, 0.0)  # Stop the robot
+                has_goal = False
+        else:
+            self.move_ttbot(speed, heading)
+            self.get_logger().info('Following path...')
