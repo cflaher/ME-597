@@ -341,10 +341,10 @@ class AStar():
         self.in_tree = in_tree
         self.q = Queue.Queue()  # FIFO queue
         self.dist = {name: np.inf for name, node in in_tree.g.items()}  # g-score
-        self.h = {name: 0 for name, node in in_tree.g.items()}  # Heuristic (h-score)
+        self.h = {name: 0 for name, node in in_tree.g.items()}  # Heuristic
         self.via = {name: None for name, node in in_tree.g.items()}  # Path tracking
 
-        # Compute heuristic values (Euclidean distance)
+        # Heuristic values (Euclidean distance)
         for name, node in in_tree.g.items():
             start = tuple(map(int, name.split(',')))
             end = tuple(map(int, self.in_tree.end.split(',')))
@@ -357,11 +357,11 @@ class AStar():
 
     def solve(self, sn, en):
         """A* pathfinding from start node `sn` to end node `en`."""
-        self.dist[sn.name] = 0  # Set start node distance to 0
-        self.q.put(sn)  # Enqueue start node
+        self.dist[sn.name] = 0  
+        self.q.put(sn)  
 
         while not self.q.empty():
-            # Sort queue based on f-score and get the best node
+            # Sort queue
             nodes = list(self.q.queue)
             nodes.sort(key=self.__get_f_score)  # Sort by f-score
             u = nodes.pop(0)  # Pick the best node
@@ -370,7 +370,7 @@ class AStar():
             for n in nodes:
                 self.q.put(n)  # Re-add remaining nodes
 
-            # Stop if we reach the goal
+            # Stop if goal reached
             if u.name == en.name:
                 break
 
@@ -397,7 +397,7 @@ class AStar():
             path.append(u)
             u = self.via[u]
 
-        path.reverse()  # Correct order from start → end
+        path.reverse()  # Correct path order
         return path, dist
 
 
@@ -415,10 +415,10 @@ class Navigation(Node):
         """
         super().__init__(node_name)
         
-        # Store map processor
+        # Map processor
         self.mp = map_processor
         
-        # Get the graph from map processor
+        # Graph from map processor
         self.graph = map_processor.map_graph
         
         # Path planner/follower related variables
@@ -428,7 +428,7 @@ class Navigation(Node):
         self.start_time = 0.0
         self.timer_period = 0.1  # 10Hz operation
 
-        # pid distance variables
+        # PID distance variables
         self.current_distance = 0
         self.dist_error = 0
         self.dist_integral_error = 0
@@ -436,7 +436,7 @@ class Navigation(Node):
         self.dist_derivative_error = 0
         self.dist_output = 0
 
-        # pid heading variables
+        # PID heading variables
         self.current_heading = 0
         self.heading_error = 0
         self.heading_integral_error = 0
@@ -453,14 +453,9 @@ class Navigation(Node):
         self.cmd_vel_pub = self.create_publisher(Twist, 'cmd_vel', 10)
         self.calc_time_pub = self.create_publisher(Float32, 'astar_time',10) #DO NOT MODIFY
 
-        # # Node rate
-        # self.rate = self.create_rate(10)
-
         # create timer
-        # timer_period = 0.3  # seconds
-        # self.timer = self.create_timer(timer_period, self.timer_callback)
-
-
+        timer_period = 0.3  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
         self.has_goal = False
 
         # A* path planner variables
@@ -521,14 +516,7 @@ class Navigation(Node):
         end_node_name = world_to_map_coords(
             end_pose.pose.position.x,
             end_pose.pose.position.y
-        )
-    
-        
-        # if end_node_name in came_from or end_node_name == start_node_name:
-        #     node_path = reconstruct_path(came_from, end_node_name)
-        # else:
-        #     self.get_logger().error("No path found")
-        #     return path
+        )    
 
         self.mp.map_graph.root = start_node_name
         self.mp.map_graph.end = end_node_name
@@ -565,72 +553,6 @@ class Navigation(Node):
         
         return path
 
-        
-    # def get_path_idx(self, path, vehicle_pose):
-    #     """Find the next waypoint to follow in the path."""
-    #     if not path.poses:
-    #         return 0
-        
-    #     # Track the last known index to prevent backtracking
-    #     if not hasattr(self, 'last_path_idx'):
-    #         self.last_path_idx = 0
-        
-    #     # Find the furthest reachable point ahead
-    #     max_look_ahead = 1.0  # meters to look ahead
-    #     target_idx = self.last_path_idx
-        
-    #     for i in range(self.last_path_idx, len(path.poses)):
-    #         # Calculate distance to this waypoint
-    #         dx = path.poses[i].pose.position.x - vehicle_pose.pose.position.x
-    #         dy = path.poses[i].pose.position.y - vehicle_pose.pose.position.y
-    #         distance = np.sqrt(dx*dx + dy*dy)
-            
-    #         # Break if we exceed look-ahead distance
-    #         if distance > max_look_ahead:
-    #             break
-            
-    #         # Update best index
-    #         target_idx = i
-    #         print(f"Closest waypoint: {path.poses[target_idx].pose.position}")
-        
-    #     # Update last known index
-    #     self.last_path_idx = target_idx
-
-    #     return target_idx
-
-    # def get_path_idx(self, path, vehicle_pose):
-    #     """Find the next waypoint to follow in the path."""
-    #     if not path.poses:
-    #         return 0
-        
-    #     # Track the last known index to prevent backtracking
-    #     if not hasattr(self, 'last_path_idx'):
-    #         self.last_path_idx = 0
-        
-    #     # Ensure last_path_idx is within bounds
-    #     self.last_path_idx = min(self.last_path_idx, len(path.poses) - 1)
-        
-    #     # Find the furthest reachable point ahead
-    #     max_look_ahead = 1.0  # meters to look ahead
-    #     target_idx = self.last_path_idx
-        
-    #     for i in range(self.last_path_idx, len(path.poses)):
-    #         # Calculate distance to this waypoint
-    #         dx = path.poses[i].pose.position.x - vehicle_pose.pose.position.x
-    #         dy = path.poses[i].pose.position.y - vehicle_pose.pose.position.y
-    #         distance = np.sqrt(dx*dx + dy*dy)
-            
-    #         # Break if we exceed look-ahead distance
-    #         if distance > max_look_ahead:
-    #             break
-            
-    #         # Update best index
-    #         target_idx = i
-        
-    #     # Update last known index with bounds check
-    #     self.last_path_idx = min(target_idx, len(path.poses) - 1)
-
-    #     return self.last_path_idx
 
     def get_path_idx(self, path, vehicle_pose):
         """! Path follower.
@@ -638,9 +560,10 @@ class Navigation(Node):
         @param  current_goal_pose     PoseStamped object containing the current vehicle position.
         @return idx                   Position in the path pointing to the next goal pose to follow.
         """
-        idx = 0
         min_dist = float('inf')
+        idx
         
+        # get waypoints
         current_pose = np.array([vehicle_pose.pose.position.x, vehicle_pose.pose.position.y])
         for i, pose in enumerate(path.poses):
             waypoint = np.array([pose.pose.position.x, pose.pose.position.y])
@@ -649,7 +572,7 @@ class Navigation(Node):
                 min_dist = dist
                 idx = i
             
-        # 2. Look ahead with dynamic threshold
+        # look ahead threshold
         lookahead_dist = 0.5
         for i in range(idx, len(path.poses)):
             waypoint = np.array([path.poses[i].pose.position.x, path.poses[i].pose.position.y])
@@ -665,7 +588,7 @@ class Navigation(Node):
         @param  current_goal_pose      PoseStamped object containing the current target from the created path.
         @return speed, heading         Tuple containing linear speed and angular heading commands
         """
-        # Debugging flag - set to True to print detailed information
+        # Debugging flag
         DEBUG = True
 
         # Prevent PID windup and ensure clean initialization
@@ -677,7 +600,7 @@ class Navigation(Node):
             self.prev_heading_error = 0.0
             self.heading_integral_error = 0.0
 
-        # More aggressive PID parameters with anti-windup
+        # PID parameters
         kp_dist = 0.5      # proportional gain for distance
         ki_dist = 0.0      # integral gain
         kd_dist = 0.2      # derivative gain
@@ -738,10 +661,6 @@ class Navigation(Node):
         if math.degrees(heading_error) > 10.0:
             speed = 0.0  # Stop if heading error is too large
 
-        # Apply limits with additional safety
-        #speed = max(min(speed, max_speed), -max_speed)
-        #heading = max(min(heading, max_heading), -max_heading)
-
         # Near goal behavior
         goal_tolerance = 0.15  # 15 cm tolerance
         if distance < goal_tolerance:
@@ -777,105 +696,44 @@ class Navigation(Node):
         
         self.cmd_vel_pub.publish(cmd_vel)
 
-    # def timer_callback(self):
-    #     """! Main loop of the node. You need to wait until a new pose is published, create a path and then
-    #     drive the vehicle towards the final pose.
-    #     @param none
-    #     @return none
-    #     """
-
-    #     self.get_logger().info('Timer callback executed')
-
-    #     # # Check for non-zero coordinates
-    #     # if (self.ttbot_pose.pose.position.x == 0 and 
-    #     #     self.ttbot_pose.pose.position.y == 0 and 
-    #     #     self.goal_pose.pose.position.x == 0 and 
-    #     #     self.goal_pose.pose.position.y == 0):
-    #     #     self.get_logger().warn('Received zero coordinates. Waiting for valid poses...')
-    #     #     return    
-        
-    #     # # If we receive a new goal, plan a new path
-    #     # else:
-    #     #     self.get_logger().info('New goal received, planning path...')
-    #     #     path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
-    #     #     self.path_pub.publish(path)
-    #     #     self.has_goal = True
-
-    #     # # Store the path and publish it
-    #     # self.path = path  # Save the path as a class member
-    #     # self.path_pub.publish(path)
-        
-    #     # # Get the next waypoint to follow
-    #     # idx = self.get_path_idx(self.path, self.ttbot_pose)
-
-    #     # # Check if index is valid
-    #     # if idx >= len(self.path.poses):
-    #     #     self.get_logger().error(f'Invalid waypoint index: {idx} (path length: {len(self.path.poses)})')
-    #     #     self.move_ttbot(0.0, 0.0)  # Stop the robot
-    #     #     return
-        
-    #     # current_goal = path.poses[idx]
-    #     # speed, heading = self.path_follower(self.ttbot_pose, current_goal)
-
-    #     # # Check if we reached the final goal
-    #     # if idx == len(path.poses) - 1:
-    #     #     self.get_logger().info('Last index')
-    #     #     # Check if we're close enough to the final goal
-    #     #     dx = path.poses[-1].pose.position.x - self.ttbot_pose.pose.position.x
-    #     #     dy = path.poses[-1].pose.position.y - self.ttbot_pose.pose.position.y
-    #     #     if np.sqrt(dx*dx + dy*dy) < 0.1:  # 10cm tolerance
-    #     #         self.get_logger().info('Goal reached!')
-    #     #         self.move_ttbot(0.0, 0.0)  # Stop the robot
-    #     #         has_goal = False
-    #     # else:
-    #     #     self.move_ttbot(speed, heading)
-    #     #     self.get_logger().info('Following path...')
-
-        
-    #     self.get_logger().info('Timer callback executed')
-
-    #     if self.has_goal:
-    #         self.has_goal = False  # This immediately turns off path planning after first attempt
-    #         path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
-    #         # You need to store and publish the path
-    #         self.path = path
-    #         self.path_pub.publish(path)
-
-    #     # This attempts to use 'path' which is only defined when has_goal is True
-    #     # It should use self.path instead
-    #     if self.path.poses != []:  # Should be: if self.path.poses != []:
-    #         idx = self.get_path_idx(path, self.ttbot_pose)
-    #         current_goal = path.poses[idx]
-        
-    #         speed, angular_speed = self.path_follower(self.ttbot_pose, current_goal)
-    #         self.move_ttbot(speed, angular_speed)
-
-    def run(self):
+    def timer_callback(self):
         """! Main loop of the node. You need to wait until a new pose is published, create a path and then
         drive the vehicle towards the final pose.
         @param none
         @return none
         """
-        path = Path()
-        while rclpy.ok():
-            rclpy.spin_once(self, timeout_sec=0.1)  
 
-            if self.has_goal:
-                self.has_goal = False
-                path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+        self.get_logger().info('Timer callback executed')
 
-            if path.poses != []:
-                idx = self.get_path_idx(path, self.ttbot_pose)
-                current_goal = path.poses[idx]
-            
-                speed, angular_speed = self.path_follower(self.ttbot_pose, current_goal)
-                self.move_ttbot(speed, angular_speed)
+        # Check for non-zero coordinates
+        if (self.ttbot_pose.pose.position.x == 0 and 
+            self.ttbot_pose.pose.position.y == 0 and 
+            self.goal_pose.pose.position.x == 0 and 
+            self.goal_pose.pose.position.y == 0):
+            self.get_logger().warn('Received zero coordinates. Waiting for valid poses...')
+            return    
+        
+        # If we receive a new goal, plan a new path
+        if self.has_goal:
+            self.get_logger().info('New goal received, planning path...')
+            self.path = self.a_star_path_planner(self.ttbot_pose, self.goal_pose)
+            self.path_pub.publish(self.path)
+            self.has_goal = False  # Only reset after successfully planning
 
-            time.sleep(0.1)
+        # Check if we have a valid path to follow
+        if hasattr(self, 'path') and len(self.path.poses) > 0:
+            # Get the next waypoint to follow
+            idx = self.get_path_idx(self.path, self.ttbot_pose)
+        
+        current_goal = self.path.poses[idx]
+        speed, heading = self.path_follower(self.ttbot_pose, current_goal)
+    
+        self.move_ttbot(speed, heading)
+        self.get_logger().info('Following path...')
 
 def main(args=None):
 
-    # rclpy.init(args=args)
+    rclpy.init(args=args)
 
     # create inflated map
     mp = MapProcessor('map')
@@ -884,22 +742,11 @@ def main(args=None):
     mp.get_graph_from_map()             
     mp.print_graph_nodes()
     
-    # nav = Navigation(mp,node_name='Navigation')
+    nav = Navigation(mp,node_name='Navigation')
 
-    # rclpy.spin(nav)
-    # nav.destroy_node()
-    # rclpy.shutdown()
-
-    rclpy.init(args=args)
-    nav = Navigation(mp, node_name='Navigation')
-
-    try:
-        nav.run()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        nav.destroy_node()
-        rclpy.shutdown()
+    rclpy.spin(nav)
+    nav.destroy_node()
+    rclpy.shutdown()
 
 
 if __name__ == "__main__":
