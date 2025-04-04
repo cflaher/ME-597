@@ -182,7 +182,7 @@ class RedBallTracker(Node):
         kd_dist = 0.0
 
         # Angle
-        kp_heading = 0.0001
+        kp_heading = 0.0002
         ki_heading = 0.0
         kd_heading = 0.0
 
@@ -204,7 +204,7 @@ class RedBallTracker(Node):
             self.get_logger().info(f'Following object at ({center_x}, {center_y})')
 
             # Distance control
-            dist_error =  (100.0/w) - 1.0
+            dist_error =  (300.0/w) - 1.0
             dist_integral_error = max(min(dist_integral_error + dist_error * self.timer_period, 1), -1)
             dist_derivative_error = (dist_error - prev_dist_error) / self.timer_period
             self.get_logger().info(f'dist error: {dist_error}')

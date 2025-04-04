@@ -1,6 +1,0 @@
-Invoking command in '/home/me597/ME-597/lab4ws/build/image_geometry': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/me597/ME-597/lab4ws/src/vision_opencv/image_geometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/lab4ws/install/image_geometry
-Invoked command in '/home/me597/ME-597/lab4ws/build/image_geometry' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/me597/ME-597/lab4ws/src/vision_opencv/image_geometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/lab4ws/install/image_geometry
-Invoking command in '/home/me597/ME-597/lab4ws/build/image_geometry': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/me597/ME-597/lab4ws/build/image_geometry -- -j2 -l2
-Invoked command in '/home/me597/ME-597/lab4ws/build/image_geometry' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/me597/ME-597/lab4ws/build/image_geometry -- -j2 -l2
-Invoking command in '/home/me597/ME-597/lab4ws/build/image_geometry': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/me597/ME-597/lab4ws/build/image_geometry
-Invoked command in '/home/me597/ME-597/lab4ws/build/image_geometry' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/me597/ME-597/lab4ws/build/image_geometry
