@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/task_6/task_6.egg-info/PKG-INFO
+writing dependency_links to ../../build/task_6/task_6.egg-info/dependency_links.txt
+writing entry points to ../../build/task_6/task_6.egg-info/entry_points.txt
+writing requirements to ../../build/task_6/task_6.egg-info/requires.txt
+writing top-level names to ../../build/task_6/task_6.egg-info/top_level.txt
+reading manifest file '../../build/task_6/task_6.egg-info/SOURCES.txt'
+writing manifest file '../../build/task_6/task_6.egg-info/SOURCES.txt'
+running build
+running build_py
+copying task_6/red_ball_tracker.py -> /home/me597/ME-597/lab4ws/build/task_6/build/lib/task_6
+running install
+running install_lib
+copying /home/me597/ME-597/lab4ws/build/task_6/build/lib/task_6/red_ball_tracker.py -> /home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task_6
+byte-compiling /home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task_6/red_ball_tracker.py to red_ball_tracker.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task_6-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/task_6/task_6.egg-info to /home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task_6-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/me597/ME-597/lab4ws/build/task_6/install.log'

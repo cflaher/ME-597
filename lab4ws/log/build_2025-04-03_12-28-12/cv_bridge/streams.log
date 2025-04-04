@@ -1,0 +1,82 @@
+[0.020s] Invoking command in '/home/me597/ME-597/lab4ws/build/cv_bridge': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake /home/me597/ME-597/lab4ws/src/vision_opencv/cv_bridge -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/lab4ws/install/cv_bridge
+[0.046s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.108s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.193s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.752s] -- Found Python3: /usr/include/python3.10 (found version "3.10.12") found components: Development NumPy Interpreter Development.Module Development.Embed 
+[0.762s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.789s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.791s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.796s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.806s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.819s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.852s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.854s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.952s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.008s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.140s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.213s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[2.234s] -- Configuring done
+[2.259s] -- Generating done
+[2.271s] -- Build files have been written to: /home/me597/ME-597/lab4ws/build/cv_bridge
+[2.282s] Invoked command in '/home/me597/ME-597/lab4ws/build/cv_bridge' returned '0': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake /home/me597/ME-597/lab4ws/src/vision_opencv/cv_bridge -DCMAKE_INSTALL_PREFIX=/home/me597/ME-597/lab4ws/install/cv_bridge
+[2.282s] Invoking command in '/home/me597/ME-597/lab4ws/build/cv_bridge': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake --build /home/me597/ME-597/lab4ws/build/cv_bridge -- -j2 -l2
+[2.343s] [  0%] Built target ament_cmake_python_symlink_cv_bridge
+[2.355s] [35m[1mConsolidate compiler generated dependencies of target cv_bridge[0m
+[2.372s] [ 22%] Built target cv_bridge
+[2.383s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[2.393s] [ 33%] Built target gtest_main
+[2.407s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[2.418s] [ 44%] Built target gtest
+[2.645s] running egg_info
+[2.646s] writing cv_bridge.egg-info/PKG-INFO
+[2.646s] writing dependency_links to cv_bridge.egg-info/dependency_links.txt
+[2.647s] writing top-level names to cv_bridge.egg-info/top_level.txt
+[2.650s] reading manifest file 'cv_bridge.egg-info/SOURCES.txt'
+[2.652s] writing manifest file 'cv_bridge.egg-info/SOURCES.txt'
+[2.674s] [ 44%] Built target ament_cmake_python_build_cv_bridge_egg
+[2.687s] [35m[1mConsolidate compiler generated dependencies of target cv_bridge_boost[0m
+[2.710s] [ 61%] Built target cv_bridge_boost
+[2.720s] [35m[1mConsolidate compiler generated dependencies of target cv_bridge-utest[0m
+[2.742s] [100%] Built target cv_bridge-utest
+[2.755s] Invoked command in '/home/me597/ME-597/lab4ws/build/cv_bridge' returned '0': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake --build /home/me597/ME-597/lab4ws/build/cv_bridge -- -j2 -l2
+[2.755s] Invoking command in '/home/me597/ME-597/lab4ws/build/cv_bridge': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake --install /home/me597/ME-597/lab4ws/build/cv_bridge
+[2.766s] -- Install configuration: ""
+[2.766s] -- Execute custom install script
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.sh
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.dsv
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge-4.1.0-py3.10.egg-info/PKG-INFO
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge-4.1.0-py3.10.egg-info/SOURCES.txt
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge-4.1.0-py3.10.egg-info/dependency_links.txt
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge-4.1.0-py3.10.egg-info/top_level.txt
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge/__init__.py
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge/core.py
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/include/cv_bridge/cv_bridge/cv_bridge_export.h
+[2.766s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge/boost//cv_bridge_boost.so
+[2.767s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/include/cv_bridge/cv_bridge/cv_bridge.hpp
+[2.767s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/include/cv_bridge/cv_bridge/cv_mat_sensor_msgs_image_type_adapter.hpp
+[2.767s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/include/cv_bridge/cv_bridge/rgb_colors.hpp
+[2.767s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/include/cv_bridge/cv_bridge/visibility_control.h
+[2.767s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/lib/libcv_bridge.so
+[2.768s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/ament_index/resource_index/package_run_dependencies/cv_bridge
+[2.768s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/ament_index/resource_index/parent_prefix_path/cv_bridge
+[2.768s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.sh
+[2.768s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.dsv
+[2.769s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/path.sh
+[2.769s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/environment/path.dsv
+[2.769s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/local_setup.bash
+[2.769s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/local_setup.sh
+[2.769s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/local_setup.zsh
+[2.770s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/local_setup.dsv
+[2.770s] -- Symlinking: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/package.dsv
+[2.779s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/ament_index/resource_index/packages/cv_bridge
+[2.779s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridge-extras.cmake
+[2.781s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.781s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_targets-extras.cmake
+[2.781s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig.cmake
+[2.781s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake
+[2.782s] -- Up-to-date symlink: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/package.xml
+[2.812s] Listing '/home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge'...
+[2.812s] Listing '/home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages/cv_bridge/boost'...
+[2.817s] -- Up-to-date: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/export_cv_bridgeExport.cmake
+[2.817s] -- Up-to-date: /home/me597/ME-597/lab4ws/install/cv_bridge/share/cv_bridge/cmake/export_cv_bridgeExport-noconfig.cmake
+[2.819s] Invoked command in '/home/me597/ME-597/lab4ws/build/cv_bridge' returned '0': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/task_6:/home/me597/ME-597/lab4ws/install/task_5:/opt/ros/humble /usr/bin/cmake --install /home/me597/ME-597/lab4ws/build/cv_bridge

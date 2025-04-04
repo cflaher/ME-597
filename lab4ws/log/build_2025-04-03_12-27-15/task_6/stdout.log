@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing task_6.egg-info/PKG-INFO
+writing dependency_links to task_6.egg-info/dependency_links.txt
+writing entry points to task_6.egg-info/entry_points.txt
+writing requirements to task_6.egg-info/requires.txt
+writing top-level names to task_6.egg-info/top_level.txt
+reading manifest file 'task_6.egg-info/SOURCES.txt'
+writing manifest file 'task_6.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task-6.egg-link (link to .)
+
+Installed /home/me597/ME-597/lab4ws/build/task_6
+running symlink_data
+symbolically linking /home/me597/ME-597/lab4ws/build/task_6/resource/task_6 -> /home/me597/ME-597/lab4ws/install/task_6/share/ament_index/resource_index/packages
+symbolically linking /home/me597/ME-597/lab4ws/build/task_6/package.xml -> /home/me597/ME-597/lab4ws/install/task_6/share/task_6

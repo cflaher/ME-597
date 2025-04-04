@@ -10,6 +10,7 @@ setup.py
 ../../build/task_6/task_6.egg-info/zip-safe
 resource/task_6
 task_6/__init__.py
+task_6/red_ball_tracker.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

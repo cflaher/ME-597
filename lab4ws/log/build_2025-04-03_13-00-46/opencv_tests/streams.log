@@ -1,0 +1,23 @@
+[1.572s] Invoking command in '/home/me597/ME-597/lab4ws/src/vision_opencv/opencv_tests': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:/home/me597/ME-597/lab4ws/install/vision_opencv:/home/me597/ME-597/lab4ws/install/image_geometry LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:/home/me597/ME-597/lab4ws/install/image_geometry/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/me597/ME-597/lab4ws/build/opencv_tests/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/opencv_tests/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/opencv_tests build --build-base /home/me597/ME-597/lab4ws/build/opencv_tests/build install --record /home/me597/ME-597/lab4ws/build/opencv_tests/install.log --single-version-externally-managed install_data
+[2.257s] running egg_info
+[2.260s] writing ../../../build/opencv_tests/opencv_tests.egg-info/PKG-INFO
+[2.260s] writing dependency_links to ../../../build/opencv_tests/opencv_tests.egg-info/dependency_links.txt
+[2.264s] writing entry points to ../../../build/opencv_tests/opencv_tests.egg-info/entry_points.txt
+[2.265s] writing requirements to ../../../build/opencv_tests/opencv_tests.egg-info/requires.txt
+[2.265s] writing top-level names to ../../../build/opencv_tests/opencv_tests.egg-info/top_level.txt
+[2.281s] reading manifest file '../../../build/opencv_tests/opencv_tests.egg-info/SOURCES.txt'
+[2.283s] writing manifest file '../../../build/opencv_tests/opencv_tests.egg-info/SOURCES.txt'
+[2.283s] running build
+[2.286s] running build_py
+[2.286s] running install
+[2.291s] running install_lib
+[2.291s] running install_data
+[2.295s] running install_egg_info
+[2.299s] removing '/home/me597/ME-597/lab4ws/install/opencv_tests/lib/python3.10/site-packages/opencv_tests-4.1.0-py3.10.egg-info' (and everything under it)
+[2.299s] Copying ../../../build/opencv_tests/opencv_tests.egg-info to /home/me597/ME-597/lab4ws/install/opencv_tests/lib/python3.10/site-packages/opencv_tests-4.1.0-py3.10.egg-info
+[2.301s] running install_scripts
+[2.359s] Installing broadcast script to /home/me597/ME-597/lab4ws/install/opencv_tests/lib/opencv_tests
+[2.362s] Installing rosfacedetect script to /home/me597/ME-597/lab4ws/install/opencv_tests/lib/opencv_tests
+[2.362s] Installing source script to /home/me597/ME-597/lab4ws/install/opencv_tests/lib/opencv_tests
+[2.365s] writing list of installed files to '/home/me597/ME-597/lab4ws/build/opencv_tests/install.log'
+[2.444s] Invoked command in '/home/me597/ME-597/lab4ws/src/vision_opencv/opencv_tests' returned '0': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:/home/me597/ME-597/lab4ws/install/vision_opencv:/home/me597/ME-597/lab4ws/install/image_geometry LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:/home/me597/ME-597/lab4ws/install/image_geometry/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/me597/ME-597/lab4ws/build/opencv_tests/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/opencv_tests/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/opencv_tests build --build-base /home/me597/ME-597/lab4ws/build/opencv_tests/build install --record /home/me597/ME-597/lab4ws/build/opencv_tests/install.log --single-version-externally-managed install_data

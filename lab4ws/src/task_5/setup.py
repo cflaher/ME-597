@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'object_detector = task_5.object_detector_launch:main',
+            'object_detector_launch = task_5.object_detector_launch:main',
+            'object_detector = task_5.object_detector:main',
             'image_publisher = task_5.image_publisher:main'
         ],
     },

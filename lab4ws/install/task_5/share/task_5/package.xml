@@ -3,7 +3,7 @@
 <package format="3">
   <name>task_5</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>object detector launch</description>
   <maintainer email="cflaherty310@gmail.com">me597</maintainer>
   <license>TODO: License declaration</license>
 

@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from vision_msgs.msg import BoundingBox2D
-from geometry_msgs.msg import Pose2D
+from vision_msgs.msg import Pose2D
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
@@ -49,8 +49,8 @@ class ObjectDetector(Node):
             # Create and publish BoundingBox2D message
             bbox_msg = BoundingBox2D()
             bbox_msg.center = Pose2D()
-            bbox_msg.center.x = float(center_x)
-            bbox_msg.center.y = float(center_y)
+            bbox_msg.center.position.x = float(center_x)
+            bbox_msg.center.position.y = float(center_y)
             bbox_msg.center.theta = 0.0  # Orientation (not used for rectangle)
             bbox_msg.size_x = float(w)
             bbox_msg.size_y = float(h)

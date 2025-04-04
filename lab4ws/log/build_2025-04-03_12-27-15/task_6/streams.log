@@ -1,0 +1,18 @@
+[0.770s] Invoking command in '/home/me597/ME-597/lab4ws/build/task_6': AMENT_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/me597/ME-597/lab4ws/build/task_6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages:/home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/me597/ME-597/lab4ws/build/task_6/build --no-deps symlink_data --force
+[1.369s] running develop
+[1.851s] running egg_info
+[1.851s] writing task_6.egg-info/PKG-INFO
+[1.855s] writing dependency_links to task_6.egg-info/dependency_links.txt
+[1.860s] writing entry points to task_6.egg-info/entry_points.txt
+[1.860s] writing requirements to task_6.egg-info/requires.txt
+[1.860s] writing top-level names to task_6.egg-info/top_level.txt
+[1.865s] reading manifest file 'task_6.egg-info/SOURCES.txt'
+[1.867s] writing manifest file 'task_6.egg-info/SOURCES.txt'
+[1.880s] running build_ext
+[1.880s] Creating /home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages/task-6.egg-link (link to .)
+[1.880s] 
+[1.881s] Installed /home/me597/ME-597/lab4ws/build/task_6
+[1.881s] running symlink_data
+[1.881s] symbolically linking /home/me597/ME-597/lab4ws/build/task_6/resource/task_6 -> /home/me597/ME-597/lab4ws/install/task_6/share/ament_index/resource_index/packages
+[1.881s] symbolically linking /home/me597/ME-597/lab4ws/build/task_6/package.xml -> /home/me597/ME-597/lab4ws/install/task_6/share/task_6
+[1.958s] Invoked command in '/home/me597/ME-597/lab4ws/build/task_6' returned '0': AMENT_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/me597/ME-597/lab4ws/build/task_6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/task_6/lib/python3.10/site-packages:/home/me597/ME-597/lab4ws/install/cv_bridge/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/me597/ME-597/lab4ws/build/task_6/build --no-deps symlink_data --force
