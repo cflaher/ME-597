@@ -1,0 +1,23 @@
+[2.195s] Invoking command in '/home/me597/ME-597/lab4ws/src/task_5': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:/home/me597/ME-597/lab4ws/install/vision_opencv:/home/me597/ME-597/lab4ws/install/image_geometry LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:/home/me597/ME-597/lab4ws/install/image_geometry/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/me597/ME-597/lab4ws/build/task_5/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/task_5/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_5 build --build-base /home/me597/ME-597/lab4ws/build/task_5/build install --record /home/me597/ME-597/lab4ws/build/task_5/install.log --single-version-externally-managed install_data
+[3.360s] running egg_info
+[3.360s] writing ../../build/task_5/task_5.egg-info/PKG-INFO
+[3.364s] writing dependency_links to ../../build/task_5/task_5.egg-info/dependency_links.txt
+[3.367s] writing entry points to ../../build/task_5/task_5.egg-info/entry_points.txt
+[3.368s] writing requirements to ../../build/task_5/task_5.egg-info/requires.txt
+[3.370s] writing top-level names to ../../build/task_5/task_5.egg-info/top_level.txt
+[3.384s] reading manifest file '../../build/task_5/task_5.egg-info/SOURCES.txt'
+[3.384s] writing manifest file '../../build/task_5/task_5.egg-info/SOURCES.txt'
+[3.385s] running build
+[3.385s] running build_py
+[3.388s] running install
+[3.392s] running install_lib
+[3.413s] running install_data
+[3.413s] running install_egg_info
+[3.428s] removing '/home/me597/ME-597/lab4ws/install/task_5/lib/python3.10/site-packages/task_5-0.0.0-py3.10.egg-info' (and everything under it)
+[3.428s] Copying ../../build/task_5/task_5.egg-info to /home/me597/ME-597/lab4ws/install/task_5/lib/python3.10/site-packages/task_5-0.0.0-py3.10.egg-info
+[3.428s] running install_scripts
+[3.515s] Installing image_publisher script to /home/me597/ME-597/lab4ws/install/task_5/lib/task_5
+[3.516s] Installing object_detector script to /home/me597/ME-597/lab4ws/install/task_5/lib/task_5
+[3.519s] Installing object_detector_launch script to /home/me597/ME-597/lab4ws/install/task_5/lib/task_5
+[3.521s] writing list of installed files to '/home/me597/ME-597/lab4ws/build/task_5/install.log'
+[3.652s] Invoked command in '/home/me597/ME-597/lab4ws/src/task_5' returned '0': CMAKE_PREFIX_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge:/home/me597/ME-597/lab4ws/install/vision_opencv:/home/me597/ME-597/lab4ws/install/image_geometry LD_LIBRARY_PATH=/home/me597/ME-597/lab4ws/install/cv_bridge/lib:/home/me597/ME-597/lab4ws/install/image_geometry/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/me597/ME-597/lab4ws/build/task_5/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/me597/ME-597/lab4ws/install/task_5/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/task_5 build --build-base /home/me597/ME-597/lab4ws/build/task_5/build install --record /home/me597/ME-597/lab4ws/build/task_5/install.log --single-version-externally-managed install_data

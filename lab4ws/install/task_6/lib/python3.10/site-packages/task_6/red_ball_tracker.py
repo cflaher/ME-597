@@ -8,6 +8,7 @@ import cv2
 import numpy as np
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
+import math
 
 class RedBallTracker(Node):
     def __init__(self):
@@ -178,12 +179,12 @@ class RedBallTracker(Node):
         # Distance
         kp_dist = 0.1
         ki_dist = 0.0
-        kd_dist = 0.1
+        kd_dist = 0.0
 
         # Angle
-        kp_heading = 0.1
+        kp_heading = 0.0001
         ki_heading = 0.0
-        kd_heading = 0.1
+        kd_heading = 0.0
 
         dist_derivative_error = 0.0
         dist_integral_error = 0.0
@@ -200,34 +201,32 @@ class RedBallTracker(Node):
             center_y = bbox_msg.center.position.y
             w, h = self.bbox_msg.size_x, self.bbox_msg.size_y
             self.get_logger().info(f'bbox dims: ({w}, {h})')
+            self.get_logger().info(f'Following object at ({center_x}, {center_y})')
 
             # Distance control
-            dist_error =  100.0 - w
+            dist_error =  (100.0/w) - 1.0
             dist_integral_error = max(min(dist_integral_error + dist_error * self.timer_period, 1), -1)
             dist_derivative_error = (dist_error - prev_dist_error) / self.timer_period
             self.get_logger().info(f'dist error: {dist_error}')
             
             # Heading control
+            #heading_error = math.atan2(500.0 - center_x, dist_error)
             heading_error = 500.0 - center_x
             heading_integral_error = max(min(heading_integral_error + heading_error * self.timer_period, 1), -1)
             heading_derivative_error = (heading_error - prev_heading_error) / self.timer_period
             self.get_logger().info(f'heading error: {heading_error}')
 
-            if heading_error < 200.0 and heading_error > -200.0:
-                heading = 0.0
-            else:
-                # PID calculations with additional safety checks
+            if heading_error < 50.0 and heading_error > -50.0:
                 speed = (kp_dist * dist_error +
                         ki_dist * dist_integral_error + 
                         kd_dist * dist_derivative_error)
-
+                heading = 0.0
+            else:
+                # PID calculations
+                speed = 0.0
                 heading = (kp_heading * heading_error + 
                         ki_heading * heading_integral_error + 
                         kd_heading * heading_derivative_error)
-                
-                self.get_logger().info(f'Following object at ({center_x}, {center_y})')
-                self.get_logger().info(f'Angular velocity: {cmd_msg.angular.z}, Linear velocity: {cmd_msg.linear.x}')
-
         else:
             # Stop the robot if no object is detected
             speed = 0.0
@@ -241,6 +240,9 @@ class RedBallTracker(Node):
         
         cmd_msg.linear.x = speed
         cmd_msg.angular.z = heading
+
+        self.get_logger().info(f'Angular velocity: {cmd_msg.angular.z}, Linear velocity: {cmd_msg.linear.x}')
+
         
         '''
 
